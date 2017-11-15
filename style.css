@@ -161,7 +161,7 @@ div#what {
     background-color: #f0f0f0;
 }
 
-h4 {
+h2 {
 	font-family: georgia, serif;
 	font-weight: normal;
 	letter-spacing: 1px;
@@ -170,18 +170,18 @@ h4 {
 
 
 .services-container {
-    
-    background-color: black;
     border-radius: 16px;
     flex: 1;
     overflow: hidden;
     min-height: 300px;
-    margin: 25px;;
+    margin: 20px;
+    max-width: 100%;
     background-image: url(https://source.unsplash.com/collection/905011/1000x1000);
     background-size: cover;
     box-shadow: 0px 3px 5px -1px rgba(0, 0, 0, 0.2),
     0px 5px 8px 0px rgba(0, 0, 0, 0.14),
     0px 1px 14px 0px rgba(0, 0, 0, 0.12);
+   
 }
 
 .info-overlay {
@@ -193,6 +193,8 @@ h4 {
     translateY(-80px)
     translateZ(0);
   transition: transform 0.5s ease-out;
+     
+    
 }
 
 .info-overlay:before {
@@ -221,17 +223,19 @@ h4 {
 
 .title {
   margin: 0;
-  padding: 24px; 
-    font-size: 32px;
+    padding: 30px;
+  line-height: 1;
 color: #636363;
+    text-align: center;
+    vertical-align: middle;
 
 
 }
 
 .description {
   margin: 0;
-  padding: 0 24px 24px;
     color: #636363;
+    
 
 
 }
@@ -239,7 +243,18 @@ color: #636363;
 /* media styles */
 
 /*--------------------------------------------------*/
-@media screen and (max-width: 580px) {
+@media screen and (max-width: 1300px){
+   
+   
+    }
+}
+
+@media screen and (max-width: 990px){
+    
+}
+
+
+@media screen and (max-width: 780px) {
     
     .mobile-nav-menu{
         display: block;
@@ -289,6 +304,8 @@ color: #636363;
     flex-direction: column;
         
     }
+    
+    
     
 }
 
