@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<!-- -->
+
+	<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+
+	<body>
+	   
+
+        <form id="quoteMe" name="quote-me">
+                
+            <div class="text-container">
+                <p> How many bedrooms?</p> <p> How many bathrooms?</p>
+            </div>
+
+            <div class="slider-container">
+
+                <input id="bedSlider" type="range" min="1" max="6" value="3">
+                
+                    
+                <input id="bathSlider" type="range" min="1" max="4">
+
+            </div>
+            <div class="ticks-container">
+                <table class="bedValueTicks">
+                    <tr>
+                        
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                    </tr>
+                </table>
+               
+                 <table class="bedValueTicks">
+                    <tr>
+                        
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                      
+                    </tr>
+                </table>
+                
+            </div>
+
+            <div class="number-container">
+                <p id="bedOutput"></p>
+                <p id="bathOutput"></p>
+
+
+            </div>
+
+            <div id="radioContainer">
+
+                <input id="moveOutClean" class="cleanTypes" type="radio" name="clean-type" value="Move-out" /> <p>Move-out clean</p>
+                
+                <input id="routineClean" class="cleanTypes" type="radio" name="clean-type" value="Routine" checked /><p>Routine clean</p>
+                
+                <input id="deepClean" class="cleanTypes" type="radio" name="clean-type" value="Deep" /><p>Deep clean</p> 
+
+            </div>
+            
+            <div class="clean-type-info"><a href="#"> ? More about clean types</a> </div>
+            
+            <div class="button-container">
+               
+                <label class="switch"> 
+                    <input id="addOnOne" type="checkbox" >
+                    <span class="click"> <p> $10</p>   </span>
+                    
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnTwo" >
+                    <span class="click"><p> $10</p> </span>
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnThree">
+                    <span class="click"><p> $10</p>  </span>
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnFour">
+                    <span class="click"><p> $10</p>  </span>
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnFive" >
+                    <span class="click"><p> $10</p> </span>
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnSix">
+                    <span class="click"><p> $10</p> </span>
+                </label>
+            
+            
+            </div>
+            
+            <div id="totalValue">
+            Total
+            </div>
+
+        </form>
+
+<!--	<script type="text/javascript" src="script.js"></script>-->
+        
+        <script src="scriptBeta.js"> </script>
+	
+        </body>
+
+	</html>

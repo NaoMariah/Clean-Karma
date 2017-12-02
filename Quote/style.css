@@ -1,0 +1,137 @@
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+form#quoteMe {
+    width: 80%;
+    background-color: aqua;
+    margin-top: 20px;
+    min-width: 600px;
+    max-width: 900px;
+    
+}
+
+div.text-container {
+    display: flex;
+     padding: 10px;
+    font-size: 1.2em;
+}
+
+div.slider-container {
+    
+    display: flex;
+   justify-content: space-around; 
+}
+
+div.slider-container input {
+	flex: auto;
+	margin: 10px;
+    max-width: 250px;
+   background-color: chartreuse;
+}
+
+.ticks-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.bedValueTicks {
+    width: 100%;
+    height: 10px;
+    max-width: 250px;
+    color: crimson;
+    font-size: 900;
+    
+    text-align:center;
+}
+
+div.number-container {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+}
+
+
+div.number-container p {
+    width: 200px;
+    font-size: 2em; 
+    text-align: center;
+    
+}
+
+div#radioContainer {
+    background-color: chartreuse;
+    display: flex;
+    padding: 30px 0px 0px;
+}
+
+div#radioContainer input {
+    flex: .5;
+}
+div#radioContainer p {
+    flex: 2;
+    font-size: 1.2em;
+}
+
+.clean-type-info {
+    text-align: center;
+    background-color: chartreuse;
+    padding: 10px;
+}
+
+.button-container {
+    background-color: crimson;
+    display: flex;
+    padding: 20px;
+}
+
+.switch {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+/*
+.switch input {
+    display: none;
+}
+*/
+
+.click {
+    position: absolute;
+    background-color: darkmagenta;
+    color: mediumpurple;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;    
+    transition: .2s;
+}
+
+.click p {
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+input:checked + .click {
+    color: white;
+    transition: .3s;
+    background-color: blue; <!-- blue -->
+    
+    
+}
+
+#totalValue {
+    background-color: chartreuse;
+    height:50px;
+    width: 100px;
+    float: right;
+    margin: auto 20px;
+    font-size: 1.2em;
+    text-align: center;
+}
