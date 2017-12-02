@@ -3,7 +3,7 @@
 
 //VARIABLES
 
-    //grab slider and output 
+//grab slider and output 
 
     let slider = document.getElementById("bedValue");
     let output = document.getElementById("bedroomNumber");
@@ -11,19 +11,59 @@
     let slider2 = document.getElementById("bathValue");
     let output2 = document.getElementById("bathroomNumber");
 
-    //grab total box
-
-    let total = document.getElementById("totalValue");
-
-    //
+ //set clean value
     let cleanValue = 0;
 
-    //
+//set bed value
+    let bedValue = 60;
+
+//set bath value
+    let bathValue = 0;
+
+//get clean type
     let routineClean = document.getElementById("routineClean");
     let moveOutClean = document.getElementById("moveOutClean");
     let deepClean = document.getElementById("deepClean");
 
+//set add on 
+let addOnValue = 0;
+
+//grab add on 1 - 6
+let addOnOne = document.getElementById("addOnOne");
+let addOnTwo = document.getElementById("addOnTwo");
+let addOnThree = document.getElementById("addOnThree");
+let addOnFour = document.getElementById("addOnFour");
+let addOnFive = document.getElementById("addOnFive");
+let addOnSix = document.getElementById("addOnSix");
+
+//grab total box
+
+    let total = document.getElementById("totalValue");
+
+ 
+
+
+
 //FUNCTIONS
+
+    function getBedValue(){
+        bedValue = 60;
+        if (slider.value == 1){
+            bedValue = 60;
+        }else if (slider.value == 2){
+            bedValue += 10;
+        }else if (slider.value == 3){
+            bedValue += 20;
+        }else if (slider.value == 4){
+            bedValue += 30;
+        }else if (slider.value == 5){
+            bedValue += 40;
+        }else if (slider.value == 6){
+            bedValue += 60;
+        }else{
+            bedValue = 0;
+        }
+    }
 
     function getCleanValue(){
        cleanValue = 0;
@@ -38,18 +78,45 @@
         return cleanValue;
     }
 
+function addOns(){
+    addOnValue = 0; 
+    
+    if(addOnOne.checked == true){
+        addOnValue += 10;
+    }
+     if(addOnTwo.checked == true){
+        addOnValue += 10;
+    }
+    
+     if(addOnThree.checked == true){
+        addOnValue += 10;
+    }
+     if(addOnFour.checked == true){
+        addOnValue += 10;
+    }
+     if(addOnFive.checked == true){
+        addOnValue += 10;
+    }
+     if(addOnSix.checked == true){
+        addOnValue += 10;
+    }
+}
+
 
    
     function getTotal(){
-        let sliderValue = Number(slider.value);
-        let slider2Value = Number(slider2.value); 
-      total.innerHTML = (sliderValue + slider2Value + cleanValue);
+      total.innerHTML = (bedValue + bathValue + cleanValue + addOnValue);
     }
+
+
+
+getBedValue();
 getCleanValue();
+addOns();
 getTotal();
 
 
-//initalize outputs to prevent refresh reset - slider value displays
+//initalize bed and bath outputs
 
     output.innerHTML = Math.round(slider.value);
 
@@ -70,7 +137,9 @@ getTotal();
 
 
 slider.oninput = function sliderUpdate(){
+    getBedValue();
     getCleanValue();
+    addOns();
     getTotal();
     
     output.innerHTML = this.value; //slider value .becomes output
@@ -96,6 +165,7 @@ slider2.oninput = function slider2update(){
 routineClean.oninput = function(){
     routineClean.checked = true;
     getCleanValue();
+    addOns();
      getTotal();
 }
 
@@ -104,6 +174,7 @@ routineClean.oninput = function(){
 moveOutClean.oninput = function(){
     moveOutClean.checked = true;
     getCleanValue();
+    addOns();
     getTotal();
 }
 
@@ -112,65 +183,37 @@ moveOutClean.oninput = function(){
 deepClean.oninput = function(){
     deepClean.checked = true;
     getCleanValue();
+    addOns();
      getTotal();
 }
-//
-//
-//
-//document.getElementById("radioContainer").oninput = function(){
-////   getTotal();
-//    
-//}
 
-
-
-
-
-
-
-//
-//let updateTotal = (num1 + num2);
-//let sliderValue = slider.value;
-//let sliderValue2 = slider2.value;
-//slider.oninput = function one() {
-//    output.innerHTML = this.value;
-//    
-//    total.innerHTML = sliderValue + sliderValue2;
-//}
-//
-//
-//
-//
-//slider2.oninput = function two() {
-//    output2.innerHTML = this.value;
-//    total.innerHTML = sliderValue + sliderValue2;
-//
-//}
-
-
-
-
-//var beds = slider.value;
-//var baths = slider2.value;
-//
-//function value() {
-//    var variable = (beds + baths);
-//    console.log(variable);
-//}
-
-//function findValue(a,b){
-//    var value = (a + b);
-//    console.log(value);
-//}
-//
-//findValue(1,2);
-//findValue(slider.value , slider2.value);
-
-//    
-//function findValue(){
-//    return output.innerHTML + output2.innerHTML = total.innerHTML;
-//}
-//
-//var form = document.getElementById("quoteMe");
-//
-//form.oninput = findValue();
+addOnOne.oninput = function(){
+    getCleanValue();
+    addOns();
+     getTotal();
+}
+addOnTwo.oninput = function(){
+    getCleanValue();
+    addOns();
+     getTotal();
+}
+addOnThree.oninput = function(){
+    getCleanValue();
+    addOns();
+     getTotal();
+}
+addOnFour.oninput = function(){
+    getCleanValue();
+    addOns();
+     getTotal();
+}
+addOnFive.oninput = function(){
+    getCleanValue();
+    addOns();
+     getTotal();
+}
+addOnSix.oninput = function(){
+    getCleanValue();
+    addOns();
+     getTotal();
+}

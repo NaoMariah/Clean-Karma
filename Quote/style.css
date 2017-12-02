@@ -102,6 +102,7 @@ div#radioContainer p {
 .click {
     position: absolute;
     background-color: darkmagenta;
+    color: mediumpurple;
       cursor: pointer;
       top: 0;
       left: 0;
@@ -110,19 +111,19 @@ div#radioContainer p {
     transition: .2s;
 }
 
-.click::before {
-     position: absolute;
-  content: "";
-  height: 42px;
-  width: 42px;
-  left: 4px;
-  bottom: 4px;
-  background-color:chartreuse;
-  transition: .4s;
+.click p {
+    -webkit-user-select: none;        
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;
 }
 
 input:checked + .click {
-  background-color: #2196F3; <!-- blue -->
+    color: white;
+    transition: .3s;
+    background-color: blue; <!-- blue -->
+    
+    
 }
 
 #totalValue {

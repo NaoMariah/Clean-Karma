@@ -18,10 +18,10 @@
 
             <div class="slider-container">
 
-                <input id="bedValue" type="range" min="1" max="6" >
+                <input id="bedSlider" type="range" min="1" max="6" value="3">
                 
                     
-                <input id="bathValue" type="range" min="1" max="4">
+                <input id="bathSlider" type="range" min="1" max="4">
 
             </div>
             <div class="ticks-container">
@@ -51,19 +51,19 @@
             </div>
 
             <div class="number-container">
-                <p id="bedroomNumber"></p>
-                <p id="bathroomNumber"></p>
+                <p id="bedOutput"></p>
+                <p id="bathOutput"></p>
 
 
             </div>
 
             <div id="radioContainer">
 
-                <input id="moveOutClean" type="radio" name="clean-type" value="Move-out" /> <p>Move-out clean</p>
+                <input id="moveOutClean" class="cleanTypes" type="radio" name="clean-type" value="Move-out" /> <p>Move-out clean</p>
                 
-                <input id="routineClean" type="radio" name="clean-type" value="Routine" /><p>Routine clean</p>
+                <input id="routineClean" class="cleanTypes" type="radio" name="clean-type" value="Routine" checked /><p>Routine clean</p>
                 
-                <input id="deepClean" type="radio" name="clean-type" value="Deep" /><p>Deep clean</p> 
+                <input id="deepClean" class="cleanTypes" type="radio" name="clean-type" value="Deep" /><p>Deep clean</p> 
 
             </div>
             
@@ -71,34 +71,35 @@
             
             <div class="button-container">
                
-                <label class="switch">
-                    <input type="checkbox">
-                    <span class="click"> </span>
+                <label class="switch"> 
+                    <input id="addOnOne" type="checkbox" >
+                    <span class="click"> <p> $10</p>   </span>
+                    
                 </label>
                 
                 <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="click"></span>
+                    <input type="checkbox" id="addOnTwo" >
+                    <span class="click"><p> $10</p> </span>
                 </label>
                 
                 <label class="switch">
-                    <input type="checkbox">
-                    <span class="click"> </span>
+                    <input type="checkbox" id="addOnThree">
+                    <span class="click"><p> $10</p>  </span>
                 </label>
                 
                 <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="click"></span>
+                    <input type="checkbox" id="addOnFour">
+                    <span class="click"><p> $10</p>  </span>
                 </label>
                 
                 <label class="switch">
-                    <input type="checkbox">
-                    <span class="click"> </span>
+                    <input type="checkbox" id="addOnFive" >
+                    <span class="click"><p> $10</p> </span>
                 </label>
                 
                 <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="click"></span>
+                    <input type="checkbox" id="addOnSix">
+                    <span class="click"><p> $10</p> </span>
                 </label>
             
             
@@ -110,7 +111,9 @@
 
         </form>
 
-	<script type="text/javascript" src="script.js"></script>
+<!--	<script type="text/javascript" src="script.js"></script>-->
+        
+        <script src="scriptBeta.js"> </script>
 	
         </body>
 
