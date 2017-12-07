@@ -1,0 +1,150 @@
+* {
+/*    box-sizing: border-box;*/
+    margin: 0 auto;
+}
+
+form#bookSignUpForm {
+    
+    
+}
+
+div#progressContainer {
+    display: flex;
+}
+
+div.drop-down {
+    padding: 20px;
+    margin: 20px 20px; 
+    border: 2px solid lightgrey;
+    
+/*    display: flex;*/
+    width: 500px;
+    max-width: 1000px;
+    
+    font-family: georgia, sans-serif;
+    font-size: 1.4em;
+    color: darkslategray;
+    
+    cursor: pointer;
+    /*  make text unselectable */
+    -webkit-user-select: none; /* Safari */       
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+}
+
+/*
+#contactFieldset {
+   display: none; 
+}
+
+#scheduleFieldset {
+    display: none;
+}
+
+#paymentFieldset {
+    display: none;
+}
+*/
+
+fieldset {
+    padding: 40px;
+    margin: 20px auto;
+    border: 1px solid lightgrey;
+    
+    display: none; 
+    grid-gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(50px, 2);
+    
+    width: 80%;
+    max-width: 450px;
+    box-shadow: 3px 4px 5px  #b3b3b3;
+   
+    font-family: arial, sans-serif;
+    color: darkslategrey;
+    
+    cursor: pointer;
+}
+
+legend {
+    font-size: 1.2em;
+}
+
+input {
+    padding: 0px 10px;
+    margin: 0px auto;
+/* reset default style */
+    border: none; 
+    border-bottom: 2px solid grey;
+    border-radius: 1px;
+    
+    display: block;
+    width: 95%;
+    height: 60px;
+    
+    font-family: georgia, sans-serif;
+    font-size: 1em;
+    color: grey;
+    letter-spacing: 1.5px;
+}
+
+
+input[name="firstName"]{
+    grid-row: 1;
+    grid-column: 1;
+    grid-column-end: 5; 
+}
+
+input[name="lastName"]{
+    grid-row: 2;
+    grid-column: 1;
+    grid-column-end: 5;
+}
+
+input[name="phoneNumber"]{
+    grid-row: 3;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+input[type="email"] {
+    grid-row: 4;
+    grid-column-start: 1;
+    grid-column-end: 5;
+    
+}
+
+input[type="button"]{
+    width: 80%;
+   margin: 40px auto;
+}
+
+input:valid {
+    border-bottom: 3px solid green;
+}
+
+
+?
+
+input:focus {
+    border-bottom: 3px solid grey;
+    border-color: grey;
+    border-radius: 3px;
+    
+    color: darkslategrey;
+    opacity: .5;
+}
+
+input[type="button"]:focus{
+    border: none;
+    border-top: 3px solid green;
+    
+    color: white;
+    background-color: black;
+    opacity: .5;
+}
+
+
+
+

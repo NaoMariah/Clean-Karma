@@ -3,6 +3,7 @@
 <html>
 
 <head> 
+
 	<title> Clean Karma </title>
 
 	<meta charset="utf-8">
@@ -12,19 +13,12 @@
 <!-- my style -->
 	<link rel="stylesheet" type="text/css" href="style.css">
 
-<!-- bootstrap style -->
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  -->
 </head>
 	
 <body>
 
 <!-- navigation -->
-	
-    
-    
     <nav>
-        
-        <a class="mobile-nav-menu"><!--Menu--></a>
         
         <ul>
         
@@ -47,20 +41,128 @@
         
 	</nav>
 
+<!-- home -->
+    <div id="home">
+     
+<!-- Quote form --> 
+        <form id="quoteMe" name="quote-me">
+
+<!-- slider -->    
+            <div class="text-container">
+                <p> How many bedrooms?</p> <p> How many bathrooms?</p>
+            </div>
+
+            <div class="slider-container">
+
+                <input id="bedSlider" type="range" min="1" max="6" value="3">
+                
+                    
+                <input id="bathSlider" type="range" min="1" max="4">
+
+            </div> <!-- end sliders -->    
+
+            <div class="ticks-container">
+                <table class="sliderValueTicks">
+                    <tr>
+                        
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                    </tr>
+                </table>
+               
+                 <table class="sliderValueTicks">
+                    <tr>
+                        
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                        <td>|</td>
+                      
+                    </tr>
+                </table>
+                
+            </div> <!-- end ticks -->    
+
+            <div class="output-container">
+
+                <p id="bedOutput"></p>
+                <p id="bathOutput"></p>
+
+            </div>
+
+<!-- clean type  -->
+            <div id="radioContainer">
+
+                <input id="moveOutClean" class="cleanTypes" type="radio" name="clean-type" value="Move-out" /> 
+                <label for="moveOutClean">Move-out clean</label>
+                
+                <input id="routineClean" class="cleanTypes" type="radio" name="clean-type" value="Routine" checked />
+                <label for="routineClean">Routine clean</label>
+                
+                <input id="deepClean" class="cleanTypes" type="radio" name="clean-type" value="Deep" />
+                <label for="deepClean">Deep Clean</label>
+
+            </div>
+            
+            <div class="clean-type-info"><a href="#"> ? More about clean types</a> </div> <!-- end clean type -->    
+
+<!-- add on buttons -->           
+            <div class="button-container">            
+                
+                <label class="switch"> 
+                    <input id="addOnOne" type="checkbox" >
+                    <span class="click"> <p> $10</p>   </span>
+                    
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnTwo" >
+                    <span class="click"><p> $10</p> </span>
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnThree">
+                    <span class="click"><p> $10</p>  </span>
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnFour">
+                    <span class="click"><p> $10</p>  </span>
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnFive" >
+                    <span class="click"><p> $10</p> </span>
+                </label>
+                
+                <label class="switch">
+                    <input type="checkbox" id="addOnSix">
+                    <span class="click"><p> $10</p> </span>
+                </label>
+            
+            
+            </div> <!-- end add on buttons -->    
+  
+<!-- total value box --> 
+            
+            
+            <div id="totalValue">
+            Total 
+            </div>
+            
+             <a id="bookMeLink" href="#"> Book me! </a>
+        </form> <!-- end form -->   
+    </div> <!-- end home -->   
+
+<!-- navigation -->
+    <div id="where-we-serve"> 
+<!--     <h3> where we serve </h3>
 
 
-<div id="home">
- 
-    <p> We serve Salt Lake Valley! - Price calculator</p>
-	
-</div>
-
-<!--
-
-<div id="where"> 
-	<h3> where we serve </h3>
-
-    
         <ul>
             <li>Salt Lake Valley</li>
             <li>Utah Valley</li>
@@ -71,20 +173,21 @@
             <li>South Jordan</li>
             <li>Bluffdale</li>
         </ul>
-    
 
-</div> 
--->
 
-    
-<div id="what">
-    <h3> our services</h3>
-    
+    </div> 
+     -->
+
+<!-- services -->
+    <div id="our-services">
+<!--    <h3> our services</h3>-->
+
 
     <div class="flex-container">
         <div class="services-container">
             <div class="info-overlay">
-               <h2 class="title">Routine Cleaning</h2>
+              
+               <h2 class="service-title"> Routine Cleaning </h2>
 
                 <p class="description"> </p>
                     <ul class="description">
@@ -104,9 +207,9 @@
 
         <div class="services-container">
             <div class="info-overlay">
-               <h2 class="title">Deep Cleaning</h2>
-
-                <p class="description">  
+               
+               <h2 class="service-title"> Deep Cleaning </h2>
+  
                     <ul>
                         <li>Baseboards</li>
                         <li>Doorframes</li>
@@ -115,13 +218,13 @@
                         
                         <li><a href=""> What's my cost?</a> </li>
                     </ul> 
-                
             </div>
         </div>
 
         <div class="services-container">
             <div class="info-overlay">
-               <h2 class="title">Move Out Cleaning</h2>
+               
+               <h2 class="service-title"> Move Out Cleaning </h2>
 
                     <ul>
                         <li>Kitchen</li>
@@ -134,25 +237,25 @@
                         
                         <li><a href=""> What's my cost?</a> </li>
                     </ul> 
-                
             </div>
         </div>
     </div>	
 </div>
 
+<!-- about -->
+    <div id="about">
+    	<h3> about us </h3>
+    </div>
 
+<!-- book -->
+    <div id="book">
 
-<div id="about">
-	<h3> about us </h3>
-</div>
+    </div>
 
-<div id="book">
-	
-</div>
-
-<footer>
-	
-</footer>
+<!-- footer -->
+    <footer>
+    	
+    </footer>
 
 <!--jQuery CDN-->
 	
@@ -164,7 +267,7 @@
   
 <!--Bootstrap CDN-->
 
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
 </body>
 

@@ -1,219 +1,180 @@
 "use strict";
-/*global document*/
 
-//VARIABLES
+//--------------------------------------------------
+//GLOBAL VARIABLES
+//--------------------------------------------------
 
-//grab slider and output 
+//grab sliders and outputs
 
-    let slider = document.getElementById("bedValue");
-    let output = document.getElementById("bedroomNumber");
-
-    let slider2 = document.getElementById("bathValue");
-    let output2 = document.getElementById("bathroomNumber");
-
- //set clean value
-    let cleanValue = 0;
+    let bedSlider = document.getElementById("bedSlider"); //bedroom slider
+    let bedOutput = document.getElementById("bedOutput"); //bedroom output
+    let bathSlider = document.getElementById("bathSlider"); //bath slider
+    let bathOutput = document.getElementById("bathOutput"); //bath output
 
 //set bed value
-    let bedValue = 60;
+    let bedDollarValue; //bedroom number value
 
 //set bath value
-    let bathValue = 0;
+    let bathDollarValue = 0; //bathroom value
 
-//get clean type
-    let routineClean = document.getElementById("routineClean");
+//grab clean types
+    let routineClean = document.getElementById("routineClean"); 
     let moveOutClean = document.getElementById("moveOutClean");
     let deepClean = document.getElementById("deepClean");
 
-//set add on 
-let addOnValue = 0;
+
+//set clean value
+    let cleanTypeDollarValue = 0; //clean type value
 
 //grab add on 1 - 6
-let addOnOne = document.getElementById("addOnOne");
-let addOnTwo = document.getElementById("addOnTwo");
-let addOnThree = document.getElementById("addOnThree");
-let addOnFour = document.getElementById("addOnFour");
-let addOnFive = document.getElementById("addOnFive");
-let addOnSix = document.getElementById("addOnSix");
+    let addOnOne = document.getElementById("addOnOne");
+    let addOnTwo = document.getElementById("addOnTwo");
+    let addOnThree = document.getElementById("addOnThree");
+    let addOnFour = document.getElementById("addOnFour");
+    let addOnFive = document.getElementById("addOnFive");
+    let addOnSix = document.getElementById("addOnSix");
+
+//set add on dollar value
+    let addOnDollarValue = 0; //add on value
 
 //grab total box
-
     let total = document.getElementById("totalValue");
 
- 
+//grab form 
+    let form = document.getElementsByTagName("form")[0];
 
+let totalDollarValue;
 
-
+//--------------------------------------------------
 //FUNCTIONS
+//--------------------------------------------------
 
-    function getBedValue(){
-        bedValue = 60;
-        if (slider.value == 1){
-            bedValue = 60;
-        }else if (slider.value == 2){
-            bedValue += 10;
-        }else if (slider.value == 3){
-            bedValue += 20;
-        }else if (slider.value == 4){
-            bedValue += 30;
-        }else if (slider.value == 5){
-            bedValue += 40;
-        }else if (slider.value == 6){
-            bedValue += 60;
-        }else{
-            bedValue = 0;
-        }
-    }
-
-    function getCleanValue(){
-       cleanValue = 0;
-        
-        if(routineClean.checked == true){
-            cleanValue = 0;
-        }else if(moveOutClean.checked == true ){
-            cleanValue += 50;
-        }else if (deepClean.checked == true){
-            cleanValue += 35;
-        }
-        return cleanValue;
-    }
-
-function addOns(){
-    addOnValue = 0; 
+//changes slider outputs 
     
-    if(addOnOne.checked == true){
-        addOnValue += 10;
+ function getSliderOutputs(){
+     
+     bedOutput.innerHTML = Number(bedSlider.value); 
+
+        if (bedOutput.innerHTML == 6){
+            bedOutput.innerHTML = "6+";
+           
+        }
+ 
+      
+    bathOutput.innerHTML = Number(bathSlider.value);
+
+ if (bathOutput.innerHTML == 4){
+        bathOutput.innerHTML = "4+";
+    }
+
+}
+
+//change bed dollar value based on slider value
+
+function getBedDollarValue(){
+   
+ switch (Number(bedSlider.value)){
+           
+        case 1:
+            bedDollarValue = 60; 
+            break;
+        case 2:
+            bedDollarValue = 70;
+            break;
+        case 3:
+            bedDollarValue = 80;
+            break;
+        case 4:
+            bedDollarValue = 90;
+            break;
+        case 5:
+        bedDollarValue = 100;
+            break;
+        case 6:
+        bedDollarValue = 120;
+            break;     
+        default:
+        console.log("This is default");
+        }   
+    console.log(bedDollarValue);
+}
+
+//get clean type dollar value
+
+function getCleanTypeDollarValue(){
+        
+    if(routineClean.checked == true){
+        cleanTypeDollarValue = 0;
+    }else if(moveOutClean.checked == true ){
+        cleanTypeDollarValue = 50;
+    }else if (deepClean.checked == true){
+        cleanTypeDollarValue= 35;
+    }else{
+        cleanTypeDollarValue = 0;
+    }   
+}
+
+//get add on dollar value
+
+function getAddOnDollarValues(){
+    addOnDollarValue = 0;
+     if(addOnOne.checked == true){
+        addOnDollarValue += 10;
     }
      if(addOnTwo.checked == true){
-        addOnValue += 10;
+        addOnDollarValue += 10;
     }
     
      if(addOnThree.checked == true){
-        addOnValue += 10;
+        addOnDollarValue += 10;
     }
      if(addOnFour.checked == true){
-        addOnValue += 10;
+        addOnDollarValue += 10;
     }
      if(addOnFive.checked == true){
-        addOnValue += 10;
+        addOnDollarValue += 10;
     }
      if(addOnSix.checked == true){
-        addOnValue += 10;
+        addOnDollarValue += 10;
     }
+    
+}
+
+//get total
+
+function getTotal (){
+    getSliderOutputs();
+    getBedDollarValue();
+    getCleanTypeDollarValue();
+    getAddOnDollarValues();
+    
+    totalDollarValue = (bedDollarValue + cleanTypeDollarValue + addOnDollarValue);
+    
+    total.innerHTML = totalDollarValue;
 }
 
 
-   
-    function getTotal(){
-      total.innerHTML = (bedValue + bathValue + cleanValue + addOnValue);
-    }
 
 
+//--------------------------------------------------
+//AND...ACTION!
+//--------------------------------------------------
 
-getBedValue();
-getCleanValue();
-addOns();
+//initialize values and total
+
 getTotal();
 
 
-//initalize bed and bath outputs
+//change total dollar value on form input...
 
-    output.innerHTML = Math.round(slider.value);
-
-        if (output.innerHTML == 6){
-            output.innerHTML = "6+";
-        }
-
-
-
-    output2.innerHTML = Math.round(slider2.value);
-
-     if (output2.innerHTML == 4){
-            output2.innerHTML = "4+";
-        }
-
-//change output and total when slider is touched
-
-
-
-slider.oninput = function sliderUpdate(){
-    getBedValue();
-    getCleanValue();
-    addOns();
-    getTotal();
-    
-    output.innerHTML = this.value; //slider value .becomes output
-    
-    if (output.innerHTML == 6){
-        output.innerHTML = "6+";
-    }
-
-}
-slider2.oninput = function slider2update(){
-    
-    output2.innerHTML = this.value; //slider value becomes output
-    
-    if (output2.innerHTML == 4){
-        output2.innerHTML = "4+";
-    }
-   getTotal();
-}
-
-
-//when clicked, radio buttons become checked
-
-routineClean.oninput = function(){
-    routineClean.checked = true;
-    getCleanValue();
-    addOns();
-     getTotal();
-}
-
-
-
-moveOutClean.oninput = function(){
-    moveOutClean.checked = true;
-    getCleanValue();
-    addOns();
+form.oninput = function (){
     getTotal();
 }
 
 
 
-deepClean.oninput = function(){
-    deepClean.checked = true;
-    getCleanValue();
-    addOns();
-     getTotal();
-}
 
-addOnOne.oninput = function(){
-    getCleanValue();
-    addOns();
-     getTotal();
-}
-addOnTwo.oninput = function(){
-    getCleanValue();
-    addOns();
-     getTotal();
-}
-addOnThree.oninput = function(){
-    getCleanValue();
-    addOns();
-     getTotal();
-}
-addOnFour.oninput = function(){
-    getCleanValue();
-    addOns();
-     getTotal();
-}
-addOnFive.oninput = function(){
-    getCleanValue();
-    addOns();
-     getTotal();
-}
-addOnSix.oninput = function(){
-    getCleanValue();
-    addOns();
-     getTotal();
-}
+
+
+    
+
