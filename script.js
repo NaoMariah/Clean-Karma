@@ -1,4 +1,4 @@
-"use strict";
+"use strict"; 
 
 //--------------------------------------------------
 //GLOBAL VARIABLES
@@ -47,11 +47,34 @@ let totalDollarValue;
 
 let bookMeLink = document.getElementById("bookMeLink");
 
+//services
+
+let moveCleanInfo = document.getElementById("moveCleanInfo");
+
+let routineCleanInfo = document.getElementById("routineCleanInfo");
+    
+let deepCleanInfo = document.getElementById("deepCleanInfo");
+
+let moveout = document.getElementsByClassName("moveout");
+
+let routine = document.getElementsByClassName("routine");
+
+let deep = document.getElementsByClassName("deep");
+
+let moveDescripStyle = document.getElementById("moveIncluded").style.display;
+
+let routineDescripStyle = document.getElementById("routineIncluded").style.display;
+
+let deepDescripStyle = document.getElementById("deepIncluded").style.display;
+
+
+
 //--------------------------------------------------
 //FUNCTIONS
 //--------------------------------------------------
 
 //changes slider outputs 
+
     
  function getSliderOutputs(){
      
@@ -155,6 +178,9 @@ function getTotal (){
     total.innerHTML = "$" + totalDollarValue;
 }
 
+//services 
+
+
 
 
 
@@ -172,6 +198,95 @@ getTotal();
 form.oninput = function (){
     getTotal();
 }
+
+
+
+moveCleanInfo.onmouseover = function (){
+    document.getElementById("routineIncluded").style.display = "none";
+    
+    document.getElementById("deepIncluded").style.display = "none";
+    
+    document.getElementById("moveIncluded").style.display = "flex";
+    
+    moveout.setAttribute("class", "moveout serviceActive");
+}
+
+moveCleanInfo.onmouseout = function(){
+     moveout[0].style.backgroundColor = "#F6F6F6";
+    
+     moveout[1].style.backgroundColor = "#F6F6F6";
+    
+    moveout[2].style.backgroundColor = "#F6F6F6";
+}
+
+//moveCleanInfo.onclick = function (){ 
+//    moveout[0].style.backgroundColor = "pink";
+//    
+//     moveout[1].style.backgroundColor = "pink";
+//    
+//    moveout[2].style.backgroundColor = "pink";
+//}
+
+routineCleanInfo.onmouseover = function (){
+    
+    document.getElementById("deepIncluded").style.display = "none";
+    
+    document.getElementById("moveIncluded").style.display = "none";
+    
+    document.getElementById("routineIncluded").style.display = "flex";
+    
+    routine[0].style.backgroundColor = "#FDE74C";
+    
+    routine[1].style.backgroundColor = "#FDE74C";
+    
+    routine[2].style.backgroundColor = "#FDE74C";
+}
+
+routineCleanInfo.onmouseout = function (){
+    
+   routine[0].style.backgroundColor = "#F6F6F6";
+    
+   routine[1].style.backgroundColor = "#F6F6F6";
+    
+    routine[2].style.backgroundColor = "#F6F6F6";
+}
+
+routineCleanInfo.onclick = function (){ 
+    
+}
+
+
+deepCleanInfo.onmouseover = function (){
+
+    document.getElementById("moveIncluded").style.display = "none";
+    
+    document.getElementById("routineIncluded").style.display = "none";
+    
+    document.getElementById("deepIncluded").style.display = "flex";
+    
+    deep[0].style.backgroundColor = "#FDE74C";
+    
+    deep[1].style.backgroundColor = "#FDE74C";
+    
+   deep[2].style.backgroundColor = "#FDE74C";
+}
+
+deepCleanInfo.onmouseout = function (){
+    
+    deep[0].style.backgroundColor = "#F6F6F6";
+    
+    deep[1].style.backgroundColor = "#F6F6F6";
+    
+    deep[2].style.backgroundColor = "#F6F6F6";
+}
+
+deepCleanInfo.onclick = function (){ 
+    
+}
+
+
+
+
 
 
 

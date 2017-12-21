@@ -10,8 +10,10 @@
 
 	<meta name="viewport" content="width=device-width" initial-scale="1">
 
-<!-- my style -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+	
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
 
 </head>
 	
@@ -47,24 +49,17 @@
 <!-- Quote form --> 
         <form id="quoteMe" name="quote-me">
 
-<!-- slider -->    
-            <div class="text-container">
-                <p> How many bedrooms?</p> <p> How many bathrooms?</p>
-            </div>
-
-            <div class="slider-container">
-
+<!-- slider -->  
+        <div id="quoteSliderContainer">
+            <div id="bedSliderContainer">
+                
+                <p> How many bedrooms?</p> 
+                 
                 <input id="bedSlider" type="range" min="1" max="6" value="3">
                 
-                    
-                <input id="bathSlider" type="range" min="1" max="4">
-
-            </div> <!-- end sliders -->    
-
-            <div class="ticks-container">
-                <table class="sliderValueTicks">
+                 <table class="sliderValueTicks">
                     <tr>
-                        
+
                         <td>|</td>
                         <td>|</td>
                         <td>|</td>
@@ -73,8 +68,18 @@
                         <td>|</td>
                     </tr>
                 </table>
-               
-                 <table class="sliderValueTicks">
+
+                <p id="bedOutput"></p>
+                
+            </div>
+
+            <div id="bathSliderContainer">
+                
+                <p> How many bathrooms?</p> 
+                
+                <input id="bathSlider" type="range" min="1" max="4">
+                
+                <table class="sliderValueTicks">
                     <tr>
                         
                         <td>|</td>
@@ -85,14 +90,10 @@
                     </tr>
                 </table>
                 
-            </div> <!-- end ticks -->    
-
-            <div class="output-container">
-
-                <p id="bedOutput"></p>
                 <p id="bathOutput"></p>
-
-            </div>
+                
+            </div>   
+        </div>
 
 <!-- clean type  -->
             <div id="radioContainer">
@@ -156,118 +157,156 @@
             
              <a id="bookMeLink" href="#"> Book me! </a>
         </form> <!-- end form -->   
-    </div> <!-- end home -->   
+    </div>   
 
-<!-- navigation -->
-    <div id="where-we-serve"> 
-<!--     <h3> where we serve </h3>
-
-
-        <ul>
-            <li>Salt Lake Valley</li>
-            <li>Utah Valley</li>
-            <li>South Jordan</li>
-            <li>Bluffdale</li>
-            <li>Herriman</li>
-            <li>Riverton</li>
-            <li>South Jordan</li>
-            <li>Bluffdale</li>
-        </ul>
-
-
-    </div> 
-     -->
+<p id="warning">! please note that homes in critical condition may have additional costs associated</p>
+     
 
 <!-- services -->
-    <div id="our-services">
-<!--    <h3> our services</h3>-->
-
-
-    <div class="flex-container">
-        <div class="services-container">
-            <div class="info-overlay">
-              
-               <h2 class="service-title"> Routine Cleaning </h2>
-
-                <p class="description"> </p>
-                    <ul class="description">
-                        <li>Kitchen</li>
-                        <li>Bathroom</li>
-                        <li>Dusting</li>
-                        <li>Floors</li>
-                        
-                        <li><a href=""> What's my cost?</a> </li>
-                    </ul>
-                
-                    
-                    
-                
-            </div>
-        </div>
-
-        <div class="services-container">
-            <div class="info-overlay">
-               
-               <h2 class="service-title"> Deep Cleaning </h2>
-  
-                    <ul>
-                        <li>Baseboards</li>
-                        <li>Doorframes</li>
-                        <li>Inside Cabinets</li>
-                        <li>Change bed sheets</li>
-                        
-                        <li><a href=""> What's my cost?</a> </li>
-                    </ul> 
-            </div>
-        </div>
-
-        <div class="services-container">
-            <div class="info-overlay">
-               
-               <h2 class="service-title"> Move Out Cleaning </h2>
-
-                    <ul>
-                        <li>Kitchen</li>
-                        <li>Bathroom</li>
-                        <li>Dusting</li>
-                        <li>Floors</li>
-                        <li>Baseboards</li>
-                        <li>Doorframes</li>
-                        <li>Inside Cabinets</li>
-                        
-                        <li><a href=""> What's my cost?</a> </li>
-                    </ul> 
-            </div>
-        </div>
-    </div>	
+    <div id="our-services"> 
+    <h3> our services</h3>
+        
+<div id="includedAlways">
+    Included always:
+    
+    <ul>
+        <li> trained Clean team </li>
+        <li> all cleaning supplies and tools </li>
+        <li> amazing and unlimited customer service </li>
+        <li> satifaction guarantee </li>
+    </ul>
 </div>
+
+<div id="servicesContainer">
+        
+        <div id="moveCleanInfo">
+            
+            <h3> Move-out clean</h3>
+            
+            <p> 
+                For those who are moving out or moving in to a new place.
+            </p>
+            
+<!--            <a href="#"> Learn more: </a>-->
+            
+        </div>
+        
+        <div id="routineCleanInfo">
+
+            <h3> Routine clean </h3>
+             
+            <p> 
+                For those who've had a recent cleaning from CK or another professional. 
+                
+<!--
+            <br> <br> 
+                <span> *Perfect for recurring cleanings to reduce allergens and pathogens by disinfecting continuously. </span>
+-->
+            </p>
+            
+<!--            <a href="#"> Learn more: </a>-->
+            
+        </div>
+        
+        <div id="deepCleanInfo">
+
+            
+            <h3> Deep clean </h3>
+             
+            <p> 
+                For those who need top-to-bottom detailed clean.
+            </p>
+            
+<!--            <a href="#"> Learn more: </a>-->
+            
+        </div>
+        
+                
+        <div id="servicesIncluded">
+            
+            <ul id="moveIncluded">
+                <li> <b> Upkeep </b> full dusting, empty trashes, clean mirrors  </li>
+                
+                <li> <b> Kitchen </b> appliances, microwave, countertops, stove top, sink </li>
+                
+                <li> <b> Bathrooms </b> scrub and sanitize sinks, bathtubs / showers, toilets, and floors
+                </li>
+                
+                <li> <b> Floors </b> vacuum and mop all floors </li>
+                
+                <li> <b> Detailing </b> door frames, baseboards, cobweb removal </li>
+                
+                <li> <b> Additional </b> cabinet doors, inside cabinets, pantry, window sills, blinds, and vents </li>
+            </ul>
+            
+            <ul id="routineIncluded">
+                <li><b> Upkeep </b> full dusting, empty trashes, clean mirrors</li>
+                <li><b> Kitchen </b> appliances, microwave, countertops, stove top, sink </li>
+                <li><b> Bathrooms </b> scrub and sanitize sinks, bathtubs / showers, toilets, and floors</li>
+                <li><b> Floors </b> vacuum and mop all floors </li>
+            </ul>
+            
+            <ul id="deepIncluded">
+                <li><b> Upkeep </b> full dusting, empty trashes, clean mirrors</li>
+                <li><b> Kitchen </b> appliances, microwave, countertops, stove top, sink </li>
+                <li><b> Bathrooms </b> scrub and sanitize sinks, bathtubs / showers, toilets, and floors </li>
+                <li><b> Floors </b> vacuum and mop all floors </li>
+                
+                <li><b> Detailing </b> door frames, baseboards, cobweb removal </li>
+            </ul>
+            
+        </div>
+    
+    </div>
+
+        
+        <div id="servicesTable">
+            
+            <div>  </div>
+            <div class="moveout serviceActive"> Move-out</div>
+            <div class="routine"> Routine </div>
+            <div class="deep"> Deep </div>
+            
+            <div> something here </div>
+            <div class="moveout"> 6 </div>
+            <div class="routine"> 7 </div>
+            <div class="deep"> 8 </div>
+            
+            <div> blah blah blah blah blah blah blah blah </div>
+            <div class="moveout"> 10 </div>
+            <div class="routine"> 11 </div>
+            <div class="deep"> 12 </div>
+            
+        </div>
+        
+ </div>
+    
 
 <!-- about -->
     <div id="about">
     	<h3> about us </h3>
+       
+        
     </div>
 
 <!-- book -->
     <div id="book">
-
+        <h3> book </h3>
     </div>
 
 <!-- footer -->
     <footer>
-    	
+    
+        
+        
     </footer>
 
-<!--jQuery CDN-->
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     
 <!-- My script -->
     
     <script src="script.js"></script>
   
-<!--Bootstrap CDN-->
 
-<!-- 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 
 </body>
 
