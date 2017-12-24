@@ -202,22 +202,40 @@ form.oninput = function (){
 
 
 moveCleanInfo.onmouseover = function (){
+    
     document.getElementById("routineIncluded").style.display = "none";
+    
+    for (var i = 0; i < routine.length; i++){
+       
+         routine[i].style.backgroundColor = "#F6F6F6";
+    }
     
     document.getElementById("deepIncluded").style.display = "none";
     
-    document.getElementById("moveIncluded").style.display = "flex";
+     for (var i = 0; i < deep.length; i++){
+       
+         deep[i].style.backgroundColor = "#F6F6F6";
+    }
     
-    moveout.setAttribute("class", "moveout serviceActive");
+    document.getElementById("moveIncluded").style.visibility = "visible";
+    
+    document.getElementById("moveIncluded").style.display = "grid";
+    
+       
+    for (var i = 0; i < moveout.length; i++){
+       
+        moveout[i].style.backgroundColor = "#FFF3A6";
+    }
 }
 
-moveCleanInfo.onmouseout = function(){
-     moveout[0].style.backgroundColor = "#F6F6F6";
-    
-     moveout[1].style.backgroundColor = "#F6F6F6";
-    
-    moveout[2].style.backgroundColor = "#F6F6F6";
-}
+//moveCleanInfo.onmouseout = function(){
+//     
+//    for (var i = 0; i < moveout.length; i++){
+//       
+//         moveout[i].style.backgroundColor = "#F6F6F6";
+//    }
+//
+//}
 
 //moveCleanInfo.onclick = function (){ 
 //    moveout[0].style.backgroundColor = "pink";
@@ -231,58 +249,74 @@ routineCleanInfo.onmouseover = function (){
     
     document.getElementById("deepIncluded").style.display = "none";
     
+      for (var i = 0; i < deep.length; i++){
+       
+         deep[i].style.backgroundColor = "#F6F6F6";
+    }
+    
     document.getElementById("moveIncluded").style.display = "none";
     
-    document.getElementById("routineIncluded").style.display = "flex";
+      for (var i = 0; i < moveout.length; i++){
+       
+         moveout[i].style.backgroundColor = "#F6F6F6";
+    }
     
-    routine[0].style.backgroundColor = "#FDE74C";
+    document.getElementById("routineIncluded").style.display = "grid";
     
-    routine[1].style.backgroundColor = "#FDE74C";
-    
-    routine[2].style.backgroundColor = "#FDE74C";
+    for (var i = 0; i < routine.length; i++){
+        routine[i].style.backgroundColor = "#FFF3A6";
+    }
 }
 
-routineCleanInfo.onmouseout = function (){
-    
-   routine[0].style.backgroundColor = "#F6F6F6";
-    
-   routine[1].style.backgroundColor = "#F6F6F6";
-    
-    routine[2].style.backgroundColor = "#F6F6F6";
-}
-
-routineCleanInfo.onclick = function (){ 
-    
-}
+//routineCleanInfo.onmouseout = function (){
+//    
+//    for (var i = 0; i < routine.length; i++){
+//       
+//         routine[i].style.backgroundColor = "#F6F6F6";
+//    }
+//}
+//
+//routineCleanInfo.onclick = function (){ 
+//    
+//}
 
 
 deepCleanInfo.onmouseover = function (){
 
     document.getElementById("moveIncluded").style.display = "none";
     
+        for (var i = 0; i < moveout.length; i++){
+       
+         moveout[i].style.backgroundColor = "#F6F6F6";
+    }
+    
+    
     document.getElementById("routineIncluded").style.display = "none";
     
-    document.getElementById("deepIncluded").style.display = "flex";
+     for (var i = 0; i < routine.length; i++){
+       
+         routine[i].style.backgroundColor = "#F6F6F6";
+    }
     
-    deep[0].style.backgroundColor = "#FDE74C";
     
-    deep[1].style.backgroundColor = "#FDE74C";
+    document.getElementById("deepIncluded").style.display = "grid";
     
-   deep[2].style.backgroundColor = "#FDE74C";
+    for (var i = 0; i < deep.length; i++){
+        deep[i].style.backgroundColor = "#FFF3A6";
+    }
 }
 
-deepCleanInfo.onmouseout = function (){
-    
-    deep[0].style.backgroundColor = "#F6F6F6";
-    
-    deep[1].style.backgroundColor = "#F6F6F6";
-    
-    deep[2].style.backgroundColor = "#F6F6F6";
-}
+//deepCleanInfo.onmouseout = function (){
+//    
+//    for (var i = 0; i < deep.length; i++){
+//       
+//         deep[i].style.backgroundColor = "#F6F6F6";
+//    }
+//}
 
-deepCleanInfo.onclick = function (){ 
-    
-}
+//deepCleanInfo.onclick = function (){ 
+//    
+//}
 
 
 

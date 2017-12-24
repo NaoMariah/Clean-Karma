@@ -14,38 +14,47 @@
 	
     <link rel="stylesheet" type="text/css" href="style.css">
     
+  <link href="https://fonts.googleapis.com/css?family=Dosis|PT+Serif" rel="stylesheet"> 
+    
 
 </head>
 	
 <body>
 
+
+<!-- home -->
+    <div id="home">
+        
+        
 <!-- navigation -->
+        
+<!--<div id="navContainer"></div>-->
+    <div class="skew"></div>
     <nav>
         
         <ul>
+            
+             <li class="logo">
+              <a href="index.html#home">  <img src="hex.png" width="25%" style="padding: 10px 0px"> </a></li>
         
+             <li>
+              <a href="index.html#services"> Services </a></li>
+            
 		  <li>
               <a href="index.html#where">  Where we serve  </a> </li>
-		
-		  <li>
-              <a href="index.html#what"> Services </a></li>
-		
-		  <li class="logo">
-              <a href="index.html#home">  <img src="hex.png" width="50%"> </a></li>
+
 		
 		  <li>
               <a href="index.html#about">  About </a></li>
 		
-		  <li>
-              <a href="index.html#book">  Book me! </a></li>
+
 
         </ul>
         
 	</nav>
-
-<!-- home -->
-    <div id="home">
-     
+  
+       
+       <div>
 <!-- Quote form --> 
         <form id="quoteMe" name="quote-me">
 
@@ -57,18 +66,6 @@
                  
                 <input id="bedSlider" type="range" min="1" max="6" value="3">
                 
-                 <table class="sliderValueTicks">
-                    <tr>
-
-                        <td>|</td>
-                        <td>|</td>
-                        <td>|</td>
-                        <td>|</td>
-                        <td>|</td>
-                        <td>|</td>
-                    </tr>
-                </table>
-
                 <p id="bedOutput"></p>
                 
             </div>
@@ -78,18 +75,7 @@
                 <p> How many bathrooms?</p> 
                 
                 <input id="bathSlider" type="range" min="1" max="4">
-                
-                <table class="sliderValueTicks">
-                    <tr>
                         
-                        <td>|</td>
-                        <td>|</td>
-                        <td>|</td>
-                        <td>|</td>
-                      
-                    </tr>
-                </table>
-                
                 <p id="bathOutput"></p>
                 
             </div>   
@@ -99,14 +85,22 @@
             <div id="radioContainer">
 
                 <input id="moveOutClean" class="cleanTypes" type="radio" name="clean-type" value="Move-out" /> 
+                
                 <label for="moveOutClean">Move-out clean</label>
+                <p id="moveCost"> (+$50) </p>
                 
                 <input id="routineClean" class="cleanTypes" type="radio" name="clean-type" value="Routine" checked />
+                
+
                 <label for="routineClean">Routine clean</label>
                 
                 <input id="deepClean" class="cleanTypes" type="radio" name="clean-type" value="Deep" />
-                <label for="deepClean">Deep Clean</label>
 
+                <label for="deepClean">Deep Clean</label>
+                <p id="deepCost"> (+$35) </p>
+                
+
+                
             </div>
             
             <div class="clean-type-info"><a href="#"> ? More about clean types</a> </div> <!-- end clean type -->    
@@ -156,15 +150,22 @@
             </div>
             
              <a id="bookMeLink" href="#"> Book me! </a>
-        </form> <!-- end form -->   
+            
+            
+        </form> <!-- end form --> 
+           
+           </div>
+        
+        <p id="warning">! please note that homes in critical condition may have additional costs associated</p>       
+ 
     </div>   
+ 
 
-<p id="warning">! please note that homes in critical condition may have additional costs associated</p>
      
 
 <!-- services -->
-    <div id="our-services"> 
-    <h3> our services</h3>
+<div id="services"> 
+<h3> our services</h3>
         
 <div id="includedAlways">
     Included always:
@@ -262,17 +263,17 @@
         
         <div id="servicesTable">
             
-            <div>  </div>
-            <div class="moveout serviceActive"> Move-out</div>
+            <div class="service">  </div>
+            <div class="moveout"> Move-out</div>
             <div class="routine"> Routine </div>
             <div class="deep"> Deep </div>
             
-            <div> something here </div>
+            <div class="service"> something here </div>
             <div class="moveout"> 6 </div>
             <div class="routine"> 7 </div>
             <div class="deep"> 8 </div>
             
-            <div> blah blah blah blah blah blah blah blah </div>
+            <div class="service"> blah blah blah blah blah blah blah blah </div>
             <div class="moveout"> 10 </div>
             <div class="routine"> 11 </div>
             <div class="deep"> 12 </div>
@@ -280,18 +281,18 @@
         </div>
         
  </div>
-    
+  
 
 <!-- about -->
-    <div id="about">
-    	<h3> about us </h3>
+    <div id="where">
+    	<h3> where we serve </h3>
        
         
     </div>
 
 <!-- book -->
-    <div id="book">
-        <h3> book </h3>
+    <div id="about">
+        <h3> about </h3>
     </div>
 
 <!-- footer -->
