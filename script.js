@@ -6,10 +6,14 @@
 
 //grab sliders and outputs
 
-    let bedSlider = document.getElementById("bedSlider"); //bedroom slider
-    let bedOutput = document.getElementById("bedOutput"); //bedroom output
-    let bathSlider = document.getElementById("bathSlider"); //bath slider
-    let bathOutput = document.getElementById("bathOutput"); //bath output
+    let bedSlider = document.getElementById("bedSlider"); 
+
+    let bedOutput = document.getElementById("bedOutput"); 
+
+    let bathSlider = document.getElementById("bathSlider"); 
+
+    let bathOutput = document.getElementById("bathOutput"); 
+
 
 //set bed value
     let bedDollarValue; //bedroom number value
@@ -49,23 +53,11 @@ let bookMeLink = document.getElementById("bookMeLink");
 
 //services
 
-let moveCleanInfo = document.getElementById("moveCleanInfo");
+let moveIncluded = document.getElementById("moveIncluded");
 
-let routineCleanInfo = document.getElementById("routineCleanInfo");
-    
-let deepCleanInfo = document.getElementById("deepCleanInfo");
+let routineIncluded = document.getElementById("routineIncluded");
 
-let moveout = document.getElementsByClassName("moveout");
-
-let routine = document.getElementsByClassName("routine");
-
-let deep = document.getElementsByClassName("deep");
-
-let moveDescripStyle = document.getElementById("moveIncluded").style.display;
-
-let routineDescripStyle = document.getElementById("routineIncluded").style.display;
-
-let deepDescripStyle = document.getElementById("deepIncluded").style.display;
+let deepIncluded = document.getElementById("deepIncluded");
 
 
 
@@ -124,8 +116,6 @@ function getBedDollarValue(){
     console.log(bedDollarValue);
 }
 
-//get clean type dollar value
-
 function getCleanTypeDollarValue(){
         
     if(routineClean.checked == true){
@@ -138,6 +128,26 @@ function getCleanTypeDollarValue(){
         cleanTypeDollarValue = 0;
     }   
 }
+
+function displayCleanTypeIncluded(){
+        
+    if(routineClean.checked == true){
+        deepIncluded.style.display = "none";
+         moveIncluded.style.display = "none";
+        routineIncluded.style.display = "inline";
+    }else if(moveOutClean.checked == true ){
+        deepIncluded.style.display = "none";
+        routineIncluded.style.display = "none";
+        moveIncluded.style.display = "inline";
+    }else if (deepClean.checked == true){
+         moveIncluded.style.display = "none";
+        routineIncluded.style.display = "none";
+        deepIncluded.style.display = "inline";
+    }else{
+    
+    }   
+}
+
 
 //get add on dollar value
 
@@ -192,131 +202,15 @@ function getTotal (){
 
 getTotal();
 
+displayCleanTypeIncluded();
+
 
 //change total dollar value on form input...
 
 form.oninput = function (){
     getTotal();
+    displayCleanTypeIncluded();
 }
-
-
-
-moveCleanInfo.onmouseover = function (){
-    
-    document.getElementById("routineIncluded").style.display = "none";
-    
-    for (var i = 0; i < routine.length; i++){
-       
-         routine[i].style.backgroundColor = "#F6F6F6";
-    }
-    
-    document.getElementById("deepIncluded").style.display = "none";
-    
-     for (var i = 0; i < deep.length; i++){
-       
-         deep[i].style.backgroundColor = "#F6F6F6";
-    }
-    
-    document.getElementById("moveIncluded").style.visibility = "visible";
-    
-    document.getElementById("moveIncluded").style.display = "grid";
-    
-       
-    for (var i = 0; i < moveout.length; i++){
-       
-        moveout[i].style.backgroundColor = "#FFF3A6";
-    }
-}
-
-//moveCleanInfo.onmouseout = function(){
-//     
-//    for (var i = 0; i < moveout.length; i++){
-//       
-//         moveout[i].style.backgroundColor = "#F6F6F6";
-//    }
-//
-//}
-
-//moveCleanInfo.onclick = function (){ 
-//    moveout[0].style.backgroundColor = "pink";
-//    
-//     moveout[1].style.backgroundColor = "pink";
-//    
-//    moveout[2].style.backgroundColor = "pink";
-//}
-
-routineCleanInfo.onmouseover = function (){
-    
-    document.getElementById("deepIncluded").style.display = "none";
-    
-      for (var i = 0; i < deep.length; i++){
-       
-         deep[i].style.backgroundColor = "#F6F6F6";
-    }
-    
-    document.getElementById("moveIncluded").style.display = "none";
-    
-      for (var i = 0; i < moveout.length; i++){
-       
-         moveout[i].style.backgroundColor = "#F6F6F6";
-    }
-    
-    document.getElementById("routineIncluded").style.display = "grid";
-    
-    for (var i = 0; i < routine.length; i++){
-        routine[i].style.backgroundColor = "#FFF3A6";
-    }
-}
-
-//routineCleanInfo.onmouseout = function (){
-//    
-//    for (var i = 0; i < routine.length; i++){
-//       
-//         routine[i].style.backgroundColor = "#F6F6F6";
-//    }
-//}
-//
-//routineCleanInfo.onclick = function (){ 
-//    
-//}
-
-
-deepCleanInfo.onmouseover = function (){
-
-    document.getElementById("moveIncluded").style.display = "none";
-    
-        for (var i = 0; i < moveout.length; i++){
-       
-         moveout[i].style.backgroundColor = "#F6F6F6";
-    }
-    
-    
-    document.getElementById("routineIncluded").style.display = "none";
-    
-     for (var i = 0; i < routine.length; i++){
-       
-         routine[i].style.backgroundColor = "#F6F6F6";
-    }
-    
-    
-    document.getElementById("deepIncluded").style.display = "grid";
-    
-    for (var i = 0; i < deep.length; i++){
-        deep[i].style.backgroundColor = "#FFF3A6";
-    }
-}
-
-//deepCleanInfo.onmouseout = function (){
-//    
-//    for (var i = 0; i < deep.length; i++){
-//       
-//         deep[i].style.backgroundColor = "#F6F6F6";
-//    }
-//}
-
-//deepCleanInfo.onclick = function (){ 
-//    
-//}
 
 
 
