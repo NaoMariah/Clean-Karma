@@ -6,13 +6,13 @@
 
 //grab sliders and outputs
 
-    let bedSlider = document.getElementById("bedSlider"); 
+    let bedSlider = document.getElementsByClassName("bedSlider")[0]; 
 
-    let bedOutput = document.getElementById("bedOutput"); 
+    let bedOutput = document.getElementsByClassName("bedOutput")[0]; 
 
-    let bathSlider = document.getElementById("bathSlider"); 
+    let bathSlider = document.getElementsByClassName("bathSlider")[0]; 
 
-    let bathOutput = document.getElementById("bathOutput"); 
+    let bathOutput = document.getElementsByClassName("bathOutput")[0]; 
 
 
 //set bed value
@@ -30,21 +30,10 @@
 //set clean value
     let cleanTypeDollarValue = 0; //clean type value
 
-//grab add on 1 - 6
-    let addOnOne = document.getElementById("addOnOne");
-    let addOnTwo = document.getElementById("addOnTwo");
-    let addOnThree = document.getElementById("addOnThree");
-    let addOnFour = document.getElementById("addOnFour");
-    let addOnFive = document.getElementById("addOnFive");
-    let addOnSix = document.getElementById("addOnSix");
-
-//set add on dollar value
-    let addOnDollarValue = 0; //add on value
-
 //grab total box
     let total = document.getElementById("totalValue");
 
-//grab form 
+//grab quote form 
     let form = document.getElementsByTagName("form")[0];
 
 let totalDollarValue;
@@ -59,6 +48,13 @@ let routineIncluded = document.getElementById("routineIncluded");
 
 let deepIncluded = document.getElementById("deepIncluded");
 
+//where we serve - zip verification
+
+let zip = document.getElementById("zip");
+
+let zipSubmit = document.getElementById("zipSubmit");
+
+let validZips = [84006,84009,84020,84044,84047,84065,84070,84081,84084,84088,84090,84091,84092,84093,84094,84095,84096,84101,84102,84103,84104,84105,84106,84107,84108,84109,84110,84111,84112,84113,84114,84115,84116,84117,84118,84119,84120,84121,84122,84123,84124,84125,84126,84127,84128,84129,84130,84131,84132,84133,84134,84136,84138,84139,84141,84143,84144,84145,84147,84148,84150,84151,84152,84157,84158,84165,84170,84171,84180,84184,84189,84190,84199];
 
 
 //--------------------------------------------------
@@ -93,22 +89,22 @@ function getBedDollarValue(){
  switch (Number(bedSlider.value)){
            
         case 1:
-            bedDollarValue = 60; 
+            bedDollarValue = 75; 
             break;
         case 2:
-            bedDollarValue = 70;
-            break;
-        case 3:
-            bedDollarValue = 80;
-            break;
-        case 4:
             bedDollarValue = 90;
             break;
+        case 3:
+            bedDollarValue = 105;
+            break;
+        case 4:
+            bedDollarValue = 120;
+            break;
         case 5:
-        bedDollarValue = 100;
+        bedDollarValue = 135;
             break;
         case 6:
-        bedDollarValue = 120;
+        bedDollarValue = 150;
             break;     
         default:
         console.log("This is default");
@@ -148,49 +144,24 @@ function displayCleanTypeIncluded(){
     }   
 }
 
-
-//get add on dollar value
-
-function getAddOnDollarValues(){
-    addOnDollarValue = 0;
-     if(addOnOne.checked == true){
-        addOnDollarValue += 10;
-    }
-     if(addOnTwo.checked == true){
-        addOnDollarValue += 10;
-    }
-    
-     if(addOnThree.checked == true){
-        addOnDollarValue += 10;
-    }
-     if(addOnFour.checked == true){
-        addOnDollarValue += 10;
-    }
-     if(addOnFive.checked == true){
-        addOnDollarValue += 10;
-    }
-     if(addOnSix.checked == true){
-        addOnDollarValue += 10;
-    }
-    
-}
-
-//get total
-
 function getTotal (){
     getSliderOutputs();
     getBedDollarValue();
     getCleanTypeDollarValue();
-    getAddOnDollarValues();
+    displayCleanTypeIncluded();
     
-    totalDollarValue = (bedDollarValue + cleanTypeDollarValue + addOnDollarValue);
+    totalDollarValue = (bedDollarValue + cleanTypeDollarValue);
     
     total.innerHTML = "$" + totalDollarValue;
 }
 
 //services 
 
+//where 
 
+function getZipValue (){
+    
+}
 
 
 
@@ -211,6 +182,33 @@ form.oninput = function (){
     getTotal();
     displayCleanTypeIncluded();
 }
+
+
+
+zipSubmit.onclick = function (){
+    
+    var zipIsValid = false;
+    
+    for (var i = 0; i <= validZips.length; i++ ) {
+        
+        if (zip.value == validZips[i]) {
+            zipIsValid = true;
+        } 
+    }
+    
+    if (zipIsValid == true) {
+        document.getElementById("alertInvalidZip").style.display = "none";
+        document.getElementById("alertValidZip").style.display = "inline";
+        
+    } else {
+        
+        document.getElementById("alertValidZip").style.display = "none";
+        document.getElementById("alertInvalidZip").style.display = "inline";
+    }
+}
+
+
+
 
 
 

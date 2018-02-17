@@ -2,8 +2,7 @@
 
 <html>
 
-<head> 
-
+  <head> 
 	<title> Clean Karma </title>
 
 	<meta charset="utf-8">
@@ -13,68 +12,56 @@
 	
     <link rel="stylesheet" type="text/css" href="style.css">
     
-    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
-<!--
+    <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet"> 
     
-    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-    
--->
-
-</head>
-	
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
+  </head>
+	 
 <body>
-
-
+    
+    
 <!-- HOME -->
-<div id="home">
+
+    <div id="home">
         
         
 <!-- navigation -->
         
-<div class="skew"></div>
-    
-    <nav>
+    <div class="skew"></div>
+      <nav>
+        <ul>
+          <li class="logo"> C <span class=second> K </span> </li>
         
-    <ul>
-         <li class="logo">
-              C<span class=second>K </span></li>
+          <li> <a href="index.html#services"> Services </a></li>
+            
+          <li> <a href="index.html#where">  Where we serve  </a> </li>
 
-         <li>
-          <a href="index.html#services"> Services </a></li>
-
-         <li>
-          <a href="index.html#where">  Where we serve  </a> </li>
-
-
-         <li>
-          <a href="index.html#about">  About </a></li>
-
-    </ul>
-        
-	</nav>
+          <li> <a href="index.html#herriman">  About </a></li>
+        </ul>
+      </nav>
     
 <!-- Quote form --> 
 <p id="quoteFormHeader"> Quote me! </p>    
 
     <form id="quoteForm">
  
-        <div id="bedSliderContainer">
+        <div class="bedSliderContainer">
 
             <p> How many bedrooms?</p> 
 
-            <input id="bedSlider" type="range" min="1" max="6" value="3">
+            <input class="bedSlider" type="range" min="1" max="6" value="3">
 
-            <p id="bedOutput"></p>
+            <p class="bedOutput"></p>
 
         </div>
 
-        <div id="bathSliderContainer">
+        <div class="bathSliderContainer">
 
             <p> How many bathrooms?</p> 
 
-            <input id="bathSlider" type="range" min="1" max="4">
+            <input class="bathSlider" type="range" min="1" max="4">
 
-            <p id="bathOutput"></p>
+            <p class="bathOutput"></p>
 
         </div>   
 
@@ -85,7 +72,7 @@
 
             <input id="routineClean" class="cleanTypes" type="radio" name="clean-type" value="Routine"  />
 
-            <label for="routineClean">Routine clean</label>
+            <label for="routineClean">Routine Clean</label>
 
         </div>
 
@@ -103,7 +90,7 @@
 
             <input id="moveOutClean" class="cleanTypes" type="radio" name="clean-type" value="Move-out" /> 
 
-            <label for="moveOutClean">Move-out clean</label>
+            <label for="moveOutClean">Move Clean</label>
 
         </div>
 
@@ -113,10 +100,10 @@
             
 <!--services included -->
     
-    <div id="includedContainer">
+    <div class="includedContainer">
          <div id="moveIncluded">
         <p> 
-        For those who are moving out or moving in to a new place.
+        For those moving out or moving in to a new place.
         </p>
 
         <ul>
@@ -147,6 +134,7 @@
         </ul>
         </div>
         <div id="deepIncluded">
+        
         <p> 
         For those who need a top-to-bottom detailed clean.
         </p>
@@ -159,159 +147,167 @@
 
             <li><b> Detailing </b> door frames, baseboards, cobweb removal </li>
         </ul>
+            
         </div>
-    </div>
-
-        
-<!--learn more-->
-        
-<!--
-    <div id="learnMoreServices">
-        <a href="#services">? Learn more about what's included</a>
-    </div>
--->
-
-<!-- add on buttons -->           
-            <div id="buttonContainer">            
-                
-                <label class="switch"> 
-                    <input id="addOnOne" type="checkbox" >
-                    <span class="click"> <p> $10</p>   </span>
-                    
-                </label>
-                
-                <label class="switch">
-                    <input type="checkbox" id="addOnTwo" >
-                    <span class="click"><p> $10</p> </span>
-                </label>
-                
-                <label class="switch">
-                    <input type="checkbox" id="addOnThree">
-                    <span class="click"><p> $10</p>  </span>
-                </label>
-                
-                <label class="switch">
-                    <input type="checkbox" id="addOnFour">
-                    <span class="click"><p> $10</p>  </span>
-                </label>
-                
-                <label class="switch">
-                    <input type="checkbox" id="addOnFive" >
-                    <span class="click"><p> $10</p> </span>
-                </label>
-                
-                <label class="switch">
-                    <input type="checkbox" id="addOnSix">
-                    <span class="click"><p> $10</p> </span>
-                </label>
-            
-                </div>
-            
+    </div>     
+</form> 
     
-<!-- total value box --> 
-            
-            
-            <div id="totalValue">
-            Total 
-            </div>
-            
-             <a id="bookMeLink" href="#"> Book me! </a>
-            
-        </form>   
-<!--
-    
-    <p id="warning">! please note that homes in critical condition may have additional costs associated</p>
--->
-
+     <div class="bookContainer">
+         
+        <div id="totalValue"> Total </div>
+        <a id="bookMeLink" href="book-me-temp.html"> Book me! </a>
+        
+         
+    </div> 
+        
 </div>
 
      
 <!-- SERVICES -->
     
-<div id="services"> 
+    <div id="services">
 
-    <h3> our services</h3>
-        
-<div id="includedAlways">
-    Included always:
-    
-    <ul>
-        <li> trained Clean team </li>
-        <li> all cleaning supplies and tools </li>
-        <li> amazing and unlimited customer service </li>
-        <li> satifaction guarantee </li>
-    </ul>
-</div>
-    
-<div id="servicesTable">
+        <h3 class="title"> </h3>
 
-    <div class="service">  </div>
-    <div class="moveout"> Move-out</div>
-    <div class="routine"> Routine </div>
-    <div class="deep"> Deep </div>
+        <h2> Vetted Pros equipped with professional tools designed for the deepest cleans. 
+        </h2>
 
-    <div class="service"> something here </div>
-    <div class="moveout"> 6 </div>
-    <div class="routine"> 7 </div>
-    <div class="deep"> 8 </div>
+          <div class="services-icons">
+            <p> All tools and supplies </p>
+            <p> Seamless communication </p>
+            <p> On-time &amp; Satifaction guarantees</p> <br> <br>
+          </div>
 
-    <div class="service"> blah blah blah blah blah blah blah blah </div>
-    <div class="moveout"> 10 </div>
-    <div class="routine"> 11 </div>
-    <div class="deep"> 12 </div>
+        <div class="discounts"> 
+            <p><span> +15% discount </span> for weekly cleans </p> <br>
+            <p><span> +10% discount </span> for bi-weekly cleans</p> <br>
+            <p><span>+5% discount </span> for monthly  cleans</p> <br>
+        </div>
 
-</div>
-            
-</div>
+        <h3></h3>
 
-        
-
-        
+    </div>
+       
 
 <!-- WHERE WE SERVE -->
     
-<div id="where">
+    <div id="where"></div>
+
+
     
-    
-    <div id="mapContainer">
+    <div class="where-container">
         
-        <h3> Where we serve </h3>
-        <p> <img src="map-final.png"> Bacon ipsum dolor amet shank short ribs pancetta picanha short loin doner jerky turducken biltong flank shankle. Shoulder doner strip steak capicola. Beef ribs tail cow, tongue filet mignon sirloin jowl. Leberkas shankle alcatra jerky, pork chop capicola prosciutto shank biltong.
-        </p>
+        <img src="img/map-final.png">
+        
+        <p>   
+            
+        We have qualified teams throughout Salt Lake County - from North Salt Lake to Draper. <br> <br>
+            
+        Enter your <span> 5-digit ZIP code </span> to see if we serve your area: <br> 
+            
+<!-- <label for="zip"> 5-digit ZIP code: </label>-->
+        
+        <input type="text" id="zip" name="zip" placeholder="ex: 84096"  pattern="[0-9]{5}" required>
+
+        <button id="zipSubmit"> Verify </button>
+                
+                
+            
+            <span id="alertValidZip"> Looks like we serve your area!  </span>
+            
+            <span id="alertInvalidZip"> We currently don't have teams in your area, but we're expanding!... </span>
+            </p>        
+    
     </div>
-</div>
+
     
 
 <!-- ABOUT -->
+    
+<div id="about"> </div>
+    <div class="about-container">
+    
+          <div class="about-content">
+      
+<!--
+    <h1> </h1> <h2> </h2>
+      
+    <p> 
+      Whether or not you believe in <span> karma </span> as a spiritual force, we believe <span> it is alive and well </span> as a principle of action. 
+      It’s simple - <i>as we do good things, good things are more likely to happen.</i> 
+    </p>
+      
+    <div class="first-image"></div>
+      
+    <div class="second-image"></div>
+    
+    <p> 
+      <span> How it works: </span> We take care of our employees, our employees take care of you, we take care of our community. Just like that. 
+      When you recruit a Clean Karma team, you can rely on a practiced, efficient, and through experience.
+      Our employees are motivated to do good work. They’re hired and trained by vetted pros, and are background checked and insured for your protection. 
+    </p>
+  
+    
+    <p>
+      When we do a <span> good </span> act, it encourages and spreads more <span> good </span>.
+    </p>
+      
+    <div class="third-image"></div>
+-->
+      
+  </div>  
+        
+        
+    </div>
 
-<div id="about">
+<!--
+<div id="herriman" class="where-ribbon">
     
-    <div id="orangeSkew">
-    
-    </div>
-    
-    <div id="yellowSkew">
-    
-    </div>
-    
+  <div class="where-container">
+
+    <img src="img/utah-3.png"> 
+
+      <p> <span class="header"> est. <span class="herriman"> Herriman UT, </span> 2017 </span>
+
+      What started as an solution to what should be an easy problem, Clean Karma came into existence aiming to be efficient. <br> <br>
+          
+      Built for those who love easy solutions, we've built teams with the tools to allow <b> transperent pricing, simple booking, and superior service.  </b>
+                 
+     </p>
 </div>
+</div>
+-->
+    
+
+    
 
 <!-- FOOTER -->
     
 <footer>
-    <ul>
-        <li><a>Q & A</a></li>
-        <li><a>This is a link</a></li>
-        <li><a>This is a link</a></li>
-        <li><a>This is a link</a></li>
-    </ul>
+  <div class="footer-container">
     
-    <div id="contact">
-        <p>sdjkfl jsdklfjsal</p>
-        <p>something@cleankarma.me</p>
-    </div>
+<!--
+    <ul>
+        <li> <h3> Questions? </h3> </li>
+        <li> <a href="Q-A.html"> Q and A </a>
+    </ul>
+-->
+<!--
+      
+     <ul>
+        <li> <h3> Work with us </h3> </li>
+        <li> <a href="jobs.html"> Jobs and careers </a> </li>
+ 
+    </ul>
+-->
+    
+     <ul class="footer-contact">
+         <li> <h3>Contact us!</h3></li>
+         <li> support&commat;cleankarma.me </li>
+         <li>(385) 258-3928 </li>
 
-
+    </ul>
+  </div>
 </footer>
 
     
