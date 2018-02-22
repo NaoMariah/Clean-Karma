@@ -7,12 +7,12 @@
 
 	<meta charset="utf-8">
 
-	<meta name="viewport" content="width=device-width" initial-scale="1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	
     <link rel="stylesheet" type="text/css" href="style.css">
     
-    <link href="https://fonts.googleapis.com/css?family=Pacifico|Quicksand" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Pacifico%7CQuicksand" rel="stylesheet"> 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
   </head>
@@ -22,8 +22,12 @@
     
 <!-- HOME -->
 
-    <div id="home">
+    <div class="home">
         
+        <picture>
+            <source srcset="" media="">
+            <img src="img/home.jpeg">
+        </picture>
         
 <!-- navigation -->
         
@@ -34,9 +38,9 @@
         
           <li> <a href="index.html#services"> Services </a></li>
             
-          <li> <a href="index.html#where">  Where we serve  </a> </li>
+          <li> <a href="index.html#whereAnchor">  Where we serve  </a> </li>
 
-          <li> <a href="index.html#herriman">  About </a></li>
+          <li> <a href="index.html#about">  About </a></li>
         </ul>
       </nav>
     
@@ -190,14 +194,13 @@
        
 
 <!-- WHERE WE SERVE -->
+    <div id="whereAnchor"> </div>
     
     <div id="where"></div>
-
-
     
     <div class="where-container">
         
-        <img src="img/map-final.png">
+        <img src="img/map-final.png" alt="map of salt lake valley">
         
         <p>   
             
@@ -209,7 +212,7 @@
         
         <input type="text" id="zip" name="zip" placeholder="ex: 84096"  pattern="[0-9]{5}" required>
 
-        <button id="zipSubmit"> Verify </button>
+        <button id="zipSubmit"> Verify </button> <br>
                 
                 
             
@@ -225,40 +228,26 @@
 <!-- ABOUT -->
     
 <div id="about"> </div>
-    <div class="about-container">
-    
-          <div class="about-content">
+    <div class="about-container"></div>
+
+<div class="about-content">
       
-<!--
     <h1> </h1> <h2> </h2>
       
     <p> 
       Whether or not you believe in <span> karma </span> as a spiritual force, we believe <span> it is alive and well </span> as a principle of action. 
-      It’s simple - <i>as we do good things, good things are more likely to happen.</i> 
-    </p>
-      
-    <div class="first-image"></div>
-      
-    <div class="second-image"></div>
+      It’s simple - <i>as we do good things, good things are more likely to happen.</i> <br> <br>
+        
+    That's why we make it a priority to take care of our employees and motivate them to do model work, taking care of you in the process. <br> <br>
     
-    <p> 
-      <span> How it works: </span> We take care of our employees, our employees take care of you, we take care of our community. Just like that. 
-      When you recruit a Clean Karma team, you can rely on a practiced, efficient, and through experience.
-      Our employees are motivated to do good work. They’re hired and trained by vetted pros, and are background checked and insured for your protection. 
-    </p>
-  
+    When you recruit a Clean Karma team, you can rely on a <br><span> practiced, efficient, and thorough </span>experience. <br> <br>
+        
+    They’re hired and trained by vetted pros, and are <br><span>background checked and insured </span> for your protection. <br>
     
-    <p>
-      When we do a <span> good </span> act, it encourages and spreads more <span> good </span>.
     </p>
-      
-    <div class="third-image"></div>
--->
       
   </div>  
-        
-        
-    </div>
+
 
 <!--
 <div id="herriman" class="where-ribbon">

@@ -22,6 +22,8 @@
     let bathDollarValue = 0; //bathroom value
 
 //grab clean types
+    let cleanContainer = document.getElementById("cleanContainer");
+
     let routineClean = document.getElementById("routineClean"); 
     let moveOutClean = document.getElementById("moveOutClean");
     let deepClean = document.getElementById("deepClean");
@@ -155,15 +157,6 @@ function getTotal (){
     total.innerHTML = "$" + totalDollarValue;
 }
 
-//services 
-
-//where 
-
-function getZipValue (){
-    
-}
-
-
 
 //--------------------------------------------------
 //AND...ACTION!
@@ -183,7 +176,10 @@ form.oninput = function (){
     displayCleanTypeIncluded();
 }
 
-
+form.onchange = function (){
+    getTotal();
+    displayCleanTypeIncluded();
+}
 
 zipSubmit.onclick = function (){
     
