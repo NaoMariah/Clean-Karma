@@ -15,43 +15,49 @@
     <link href="https://fonts.googleapis.com/css?family=Pacifico%7CQuicksand" rel="stylesheet"> 
     
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
-  </head>
+      
+    <script> document.createElement( "picture" ); </script>
+      
+  <script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.js" async></script>
+  
+</head>
 	 
 <body>
     
     
 <!-- HOME -->
-
-    <div class="home">
         
-        <picture>
-            <source srcset="" media="">
-            <img src="img/home.jpeg">
-        </picture>
-        
+    <picture>
+        <source srcset="img/home-small.jpeg" media="(max-width: 350px)">
+        <source srcset="img/home-medium.jpeg" media="(max-width: 700px)">
+        <img src="img/home.jpeg" alt="a freshly cleaned room dressed with fresh tulips next to an open window that lets in warm sunlight">
+    </picture>
+ 
+<div class="layout-container">
 <!-- navigation -->
         
-    <div class="skew"></div>
+    <div class="nav-bg"></div>
       <nav>
         <ul>
           <li class="logo"> C <span class=second> K </span> </li>
         
           <li> <a href="index.html#services"> Services </a></li>
             
-          <li> <a href="index.html#whereAnchor">  Where we serve  </a> </li>
+          <li> <a href="index.html#where">  Where we serve  </a> </li>
 
           <li> <a href="index.html#about">  About </a></li>
         </ul>
       </nav>
     
 <!-- Quote form --> 
-<p id="quoteFormHeader"> Quote me! </p>    
+    
+<p id="formHeader"> Quote me! </p>    
 
     <form id="quoteForm">
  
         <div class="bedSliderContainer">
 
-            <p> How many bedrooms?</p> 
+            <p> How many bedrooms? </p> 
 
             <input class="bedSlider" type="range" min="1" max="6" value="3">
 
@@ -102,7 +108,7 @@
     </div> 
 
             
-<!--services included -->
+<!-- included -->
     
     <div class="includedContainer">
          <div id="moveIncluded">
@@ -156,24 +162,23 @@
     </div>     
 </form> 
     
-     <div class="bookContainer">
+     <div class="book-container">
          
         <div id="totalValue"> Total </div>
         <a id="bookMeLink" href="book-me-temp.html"> Book me! </a>
         
          
     </div> 
-        
-</div>
+
 
      
 <!-- SERVICES -->
-    
-    <div id="services">
+
+    <div class="services-container" id="services">
 
         <h3 class="title"> </h3>
 
-        <h2> Vetted Pros equipped with professional tools designed for the deepest cleans. 
+        <h2> Vetted teams equipped with tools designed for the deepest cleans. 
         </h2>
 
           <div class="services-icons">
@@ -194,80 +199,78 @@
        
 
 <!-- WHERE WE SERVE -->
-    <div id="whereAnchor"> </div>
     
-    <div id="where"></div>
-    
-    <div class="where-container">
+    <div class="where-container" id="where">
+      <div class="where-bg">
+        <div class="where-content">
         
-        <img src="img/map-final.png" alt="map of salt lake valley">
+        <picture>
+            <source srcset="img/map-small.png" media="(max-width: 350px)">
+            <source srcset="img/map-medium.png" media="(max-width: 700px)">
+            <img src="img/map.png" alt="map showing the area of salt lake valley our clean teams have reach to">
+        </picture>
         
-        <p>   
-            
-        We have qualified teams throughout Salt Lake County - from North Salt Lake to Draper. <br> <br>
-            
-        Enter your <span> 5-digit ZIP code </span> to see if we serve your area: <br> 
-            
-<!-- <label for="zip"> 5-digit ZIP code: </label>-->
-        
-        <input type="text" id="zip" name="zip" placeholder="ex: 84096"  pattern="[0-9]{5}" required>
+        <h2> Where we serve </h2>
 
-        <button id="zipSubmit"> Verify </button> <br>
-                
-                
+            <p> We have qualified teams throughout Salt Lake County - from North Salt Lake to Draper. 
+            <br> <br>
             
+            Enter your <span> 5-digit ZIP code </span> to see if we serve your area: 
+            <br> 
+
+            <input type="text" id="zip" name="zip" placeholder="ex: 84096"  pattern="[0-9]{5}" required>
+
+            <button id="zipSubmit"> Verify </button> <br>
+
+
+
             <span id="alertValidZip"> Looks like we serve your area!  </span>
-            
-            <span id="alertInvalidZip"> We currently don't have teams in your area, but we're expanding!... </span>
-            </p>        
-    
-    </div>
 
+            <span id="alertInvalidZip"> We currently don't have teams in your area, but we're expanding!... </span>
+        </p>  
+            
+        </div>  
+      </div>  
+    </div>
     
 
 <!-- ABOUT -->
-    
-<div id="about"> </div>
-    <div class="about-container"></div>
 
-<div class="about-content">
-      
-    <h1> </h1> <h2> </h2>
-      
-    <p> 
-      Whether or not you believe in <span> karma </span> as a spiritual force, we believe <span> it is alive and well </span> as a principle of action. 
-      It’s simple - <i>as we do good things, good things are more likely to happen.</i> <br> <br>
+<div class="about-container" id="about">
+  <div class="about-bg">        
+    <div class="about-content">
         
-    That's why we make it a priority to take care of our employees and motivate them to do model work, taking care of you in the process. <br> <br>
-    
-    When you recruit a Clean Karma team, you can rely on a <br><span> practiced, efficient, and thorough </span>experience. <br> <br>
+        <picture>
+            <source srcset="img/utah-small.png" media="(max-width: 350px)">
+            <source srcset="img/utah-medium.png" media="(max-width: 700px)">
+            <img src="img/utah.png" alt="">
+        </picture>
+
+        <h2> More About us</h2>
+
+        <div class="social">
+            <a href="#"> <img src="img/fb-2.png" alt="facebook"> </a>
+
+            <a href="#"> <img src="img/insta.png" alt="facebook"> </a>
+
+            <a href="#"> <img src="img/twit.png" alt="facebook"> </a>
+        </div>          
         
-    They’re hired and trained by vetted pros, and are <br><span>background checked and insured </span> for your protection. <br>
     
-    </p>
-      
-  </div>  
+        <p> 
+          Whether or not you believe in <span> karma </span> as a spiritual force, we believe <span> it is alive and well </span> as a principle of action. 
+          It’s simple - <i>as we do good things, good things are more likely to happen.</i> <br> <br>
+        
+            That's why we make it a priority to take care of our employees and motivate them to do model work, taking care of you in the process. <br> <br>
 
+            When you recruit a Clean Karma team, you can rely on a <span> practiced, efficient, and thorough </span>experience. <br> <br>
 
-<!--
-<div id="herriman" class="where-ribbon">
-    
-  <div class="where-container">
+            They’re hired and trained by vetted pros, and are <span>background checked and insured </span> for your protection. <br>
 
-    <img src="img/utah-3.png"> 
-
-      <p> <span class="header"> est. <span class="herriman"> Herriman UT, </span> 2017 </span>
-
-      What started as an solution to what should be an easy problem, Clean Karma came into existence aiming to be efficient. <br> <br>
-          
-      Built for those who love easy solutions, we've built teams with the tools to allow <b> transperent pricing, simple booking, and superior service.  </b>
-                 
-     </p>
-</div>
-</div>
--->
-    
-
+            </p>
+        </div>
+    </div>   
+</div> 
     
 
 <!-- FOOTER -->
@@ -291,14 +294,17 @@
 -->
     
      <ul class="footer-contact">
-         <li> <h3>Contact us!</h3></li>
+         <li> <h3> Contact us! </h3> </li>
          <li> support&commat;cleankarma.me </li>
-         <li>(385) 258-3928 </li>
+         <li> (385) 258-3928 </li>
 
     </ul>
   </div>
 </footer>
+</div>
 
+
+        
     
 <!-- My script -->
     
