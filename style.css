@@ -66,7 +66,6 @@ ul, li, p {
     display: grid;
     grid-template-columns: repeat(12,1fr);
     max-width: 100%;
-/*    padding: 0 50px;*/
 
     position: absolute;
     top: 20px;
@@ -80,6 +79,10 @@ picture img {
     min-height: 130vh;
     
     object-fit: cover;
+   
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 
@@ -548,7 +551,7 @@ form input:checked + label {
 .where-bg, .about-bg {
     height: 500px;
     width: 100%;
-    z-index: -1;
+    z-index: 1;
     
     background-color: rgba(255, 158, 118, 0.6);
     border-radius: 10px 10px 0 0;
@@ -574,6 +577,8 @@ form input:checked + label {
     max-width: 400px;
     min-height: 0;
     display: flex;
+    
+    
 }
 
 .where-container h2,
@@ -666,16 +671,23 @@ form input:checked + label {
     margin-top: 400px;
 }
 
-.social {
+.social, 
+.follow {
     display: flex;
     width: 500px;
     margin-top: 50px;
     opacity: .8;
 }
 
+.follow { 
+    width: 550px;
+    margin-top: 20px;
+    
+}
+
 .about-bg {
     background-color: rgba(255, 243, 166, .3);
- transform: translateY(0);
+    transform: translateY(0);
     height: 85%;
 }
 
@@ -715,7 +727,7 @@ footer {
     grid-column: span 12;
     grid-row: 10;
     width: 100%;
-   
+   z-index: 2;
     
     background-color: rgba(134, 85, 85, .8);
 }
@@ -978,6 +990,14 @@ footer a:hover{
     .social {
         width: auto;
     }
+    
+        .about-content p {
+        font-size: 1em;
+    }
+        
+        .about-content span {
+            font-size: 1.3em;
+        }
 }
     @media all and (max-width: 350px){
     
@@ -1014,9 +1034,5 @@ footer a:hover{
  
     .where-content, .about-content {
         transform: translateY(-140px);
-    }
-        
-    .about-content p {
-        font-size: 1em;
     }
 }
