@@ -1,51 +1,95 @@
 * {
     list-style-type: none;
-    font-family: 'arial', sans-serif;
     margin: 0 auto;
     
 }
 
+ul, li, p {
+
+    font-family: arial, sans-serif;
+    color: #6b6a6b;
+    
+}
+.layout-container {
+	display: grid;
+	grid-template-columns: repeat(12,1fr);
+	max-width: 100%;
+	padding-top: 20px;
+}
+
 /* navigation */
-/*--------------------------------------------------*/
 
-
-nav {
-    background: rgba(255, 255, 255, .4);;
-    height: 50px;
+.nav-bg {
+    grid-row: 1;
+    grid-column: span 12;
+    
+     height: 50px;
+    width: 40%;
+    min-width: 275px;
+    margin-right: 10px;
+    
+    background-color: white;
+    opacity: .7;
+    border-radius: 5px;
 }
 
 nav ul {
+    position: absolute;
+    right: 0;
+    top: 10px;
+    
+    width: 40%;
+    min-width: 275px;
     display: flex;
-    justify-content: space-around;
-    color: #6b6a6b;
-    align-items: center;
-    height: 100%;
-    text-decoration: none;
-    padding: 0 5px;
+    justify-content: space-between;
+    
+    text-align: center;
+    align-items: center; 
+    
+    font-size: 1em;
+    opacity: .8; 
 }
 
-nav ul li {
-    text-decoration: none;
+nav li {
+    grid-row: 1;
+    grid-column: span 12;
+    
+    
+    font-family: 'Quicksand', sans-serif;
+    letter-spacing: 2px;
+    flex: 1;
+    list-style: none;
+    font-size: .9em;
+    padding-top: 17px;
 }
+
+nav .logo {
+    flex: 1.5;
+    font-size: 1.4em;
+    transform: scale(1.5);
+    font-family: 'Quicksand', serif;
+    padding-right: 20px;
+    padding-top: 0px;
+}
+
+.logo .second {
+    position: absolute;
+    top: 10px; 
+}
+
 
 nav a:link{
     color: #636363;
     text-decoration: none;
-    font-family: 'Quicksand',
-    arial, sans-serif;
-    font-size: 1.2em;
 }
 
 nav a:visited {
     color: #636363;
 }	
 
-nav a:hover,
-a:hover {
-    color:rgba(255, 133, 82, .8);
+nav a:hover {
+    color: #ff8552;
 }
-
-
 
 
 body:before {
@@ -67,24 +111,12 @@ body:before {
 
 body {
     height: 100%;
-    
-    
+
 }
 
 
 form {
     display: flex;
-}
-
-.container {
-    width: 75%;
-    height: 65%;
-    margin: 50px auto;
-    padding: 50px;
-    background: rgba(255, 255, 255, .6);
-    text-align: center;
-    color: rgba(107, 107, 106, 1);
-    
 }
 
   h1,  h3 {
@@ -93,8 +125,17 @@ form {
 
 
 .contact-container {
+	grid-row: 2;
+    grid-column: span 12;
+    
     display: flex;
     flex-direction: column;
+	background: rgba(255, 255, 255, .6);
+	text-align: center;
+	width: 75%;
+    height: 65%;
+    margin: 50px auto;
+    padding: 50px;
 }
 
 .contact-container img {
@@ -106,7 +147,6 @@ form {
 .contact-container a,
 .contact-container p {
     padding: 20px;
-    padding-top: 0;
     flex: 1;
     text-align: center;
     border: 3px dotted rgba(255, 133, 82, 1);
@@ -116,6 +156,11 @@ form {
     font-family: 'Quicksand', arial, sans-serif;
     color: #6a6b6a;
     cursor: pointer;
+}
+
+.contact-container span {
+	color: #6a6b6a;
+	font-family: 'arial', sans-serif;
 }
 
 .copied {
