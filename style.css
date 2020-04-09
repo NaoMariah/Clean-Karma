@@ -14,11 +14,9 @@ html {
 
 body:before {
     content: "";
-     z-index: -1;
-    
+    z-index: -1;
     background-image: url(img/final.png);
     background-size: cover;
-    
     background-repeat: no-repeat;
     background-position: bottom;
     width: 120%;
@@ -45,7 +43,6 @@ h2 {
 }
 
 h3 {
-
     color: #FF8552;
     font-size: 32px;
     
@@ -56,89 +53,78 @@ h3 {
 }
 
 ul, li, p {
-
     font-family: arial, sans-serif;
     color: #6b6a6b;
-    
 }
 
-.layout-container {
-    display: grid;
-    grid-template-columns: repeat(12,1fr);
-    max-width: 100%;
-
-    position: absolute;
-    top: 20px;
-}
-
-
-/* HOME */
-
+/* bg */
 picture img {
     max-width: 100%;
     min-height: 130vh;
-    
     object-fit: cover;
-   
     -moz-user-select: none;
     -webkit-user-select: none;
     user-select: none;
 }
 
+/* LAYOUT */
+.layout-container {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    grid-template-rows: 50px 50px auto;
+    max-width: 100%;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    padding: 0 1em;
+}
 
 /* navigation */
-
-.nav-bg {
-    grid-row: 1;
-    grid-column: span 12;
-    
-     height: 50px;
+nav {
+    height: 60px;
     width: 40%;
     min-width: 275px;
     margin-right: 10px;
-    
     background-color: white;
     opacity: .7;
     border-radius: 5px;
+    margin-top: 10px;
+
+    grid-row: 1;
+    grid-column: span 12;
 }
 
 nav ul {
-    position: absolute;
-    right: 0;
-    top: -8px;
-    
-    width: 40%;
     min-width: 275px;
-    display: flex;
-    justify-content: space-between;
-    
     text-align: center;
     align-items: center; 
-    
     font-size: 1em;
     opacity: .8; 
+    
+    display: flex;
+    justify-content: space-between;
 }
 
 nav li {
-    grid-row: 1;
-    grid-column: span 12;
-    
-    
+    flex: 1;
     font-family: 'Quicksand', sans-serif;
     letter-spacing: 2px;
-    flex: 1;
     list-style: none;
     font-size: .9em;
-    padding-top: 17px;
 }
+
+nav li:nth-child(2),
+    li:nth-child(3),
+    li:nth-child(4) {
+        margin-top: 10px;
+    }
 
 nav .logo {
     flex: 1.5;
     font-size: 1.4em;
     transform: scale(1.5);
     font-family: 'Quicksand', serif;
-    padding-right: 20px;
-    padding-top: 0px;
+
 }
 
 nav .second {
@@ -160,10 +146,8 @@ nav a:hover {
     color: #ff8552;
 }
 
-/* quote form */
-
+/* form header */
 #formHeader {
-    
     position: absolute;
     top: 55px;
     left: 10%;
@@ -171,44 +155,78 @@ nav a:hover {
     font-size: 3em;
     z-index: 1;
     opacity: .9;
+    
+    grid-row: 2;
+    grid-column: span 12;
 }
 
+/* form  */
 #quoteForm { 
-    grid-column: span 12;
-    grid-row: 2;
     margin-top: 65px;
-    
-
     opacity: .9;
-    min-width: 65%;
-    max-width: 70%;
     border-radius: 10px;
-     box-shadow: inset 0px 6px 0px 0px rgba(255, 255, 255, .5);
+    box-shadow: inset 0px 6px 0px 0px rgba(255, 255, 255, .5);
     padding-top: 6px;
-    
+    background-color: rgba(255, 255, 255, .5);
+
+    grid-row: 3;
+    grid-column: span 12;
     
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    
+    grid-template-columns: repeat(4, 1fr);
 }
 
-.bedSliderContainer,
-.bathSliderContainer {
-    grid-column: span 6;
-    font-size: 1.1em;
+.tab {
+	width: 100%;
+	padding: 20px;
+}
+
+.commercial {
+    background-color: red;
+    
+    grid-row: 1;
+    grid-column: span 2;
+}
+
+.residential {
+    background-color: green;
+    
+    grid-row: 1;
+    grid-column: span 2;
+}
+
+.cleaning,
+.windows {
+	width: 100%;
+    
+    grid-row: 2;
+    grid-column: span 2;
+	display: flex;
+	flex-direction: column;
+}
+
+.slider {
+	/* grid-column: span 4; */
+    
+	font-size: 1.1em;
     width: 100%;
     background-color: rgba(255, 255, 255, .8);
     border-radius: 0px 5px 5px 0px;
     padding: 10px;
-    letter-spacing: 1px;  
+    letter-spacing: 1px; 
+	
+	display: flex;
 }
 
-.bedSliderContainer {
-    border-radius: 5px 0px 0px 5px;
+.bed  {
+	border-radius: 5px 0px 0px 5px;
+}
+
+.bath {
+	
 }
 
 form input[type=range] { 
-
     cursor: pointer;
     display: flex;
     margin: 10px auto;
@@ -217,7 +235,6 @@ form input[type=range] {
     -webkit-appearance: none;
     height: 6px;
     background-color: #fff3a6;
-    
 }
 
 input[type=range]:focus {
@@ -257,8 +274,8 @@ input[type=range]::-moz-range-thumb {
     border-radius: 50px;
 }
 
-.bedSliderContainer p,
-.bathSliderContainer p { 
+/*
+.slider p { 
 
     display: flex;
     justify-content: space-around;
@@ -267,6 +284,7 @@ input[type=range]::-moz-range-thumb {
     font-family: 'Roboto Slab', sans-serif;
     
 }
+*/
 
 .bedOutput,
 .bathOutput {
@@ -275,7 +293,7 @@ input[type=range]::-moz-range-thumb {
 }
 
 #cleanContainer {
-    grid-column: span 12;
+    /* grid-column: span 12; */
     width: 100%;
     
     display: flex;
@@ -290,6 +308,7 @@ input[type=range]::-moz-range-thumb {
     padding: 20px;
     font-family: 'Quicksand', sans-serif;
     color: #6b6a6b;
+
     
 }
 
@@ -320,7 +339,7 @@ form input:checked + label {
 }
 
 .includedContainer {
-    grid-column: 1 / -1;
+    /* grid-column: 1 / -1; */
     width: 100%;
    min-height: 325px;
     letter-spacing: 0;
@@ -331,8 +350,8 @@ form input:checked + label {
    
     font-size: 1em;
     background-color: rgba(255, 255, 255, .8);
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    /* display: grid;
+    grid-template-columns: repeat(12, 1fr); */
 }
 
 .includedContainer ul {
@@ -359,70 +378,54 @@ form input:checked + label {
 }
 
 #moveIncluded {
-    grid-column: span 12;
+    /* grid-column: span 12; */
     display: none;
 }
 
 #routineIncluded {
-    grid-column: span 12;
+    /* grid-column: span 12; */
     display: none;
 }
 
 #deepIncluded {
-    grid-column: span 12;
+    /* grid-column: span 12; */
     display: none;
 }
 
-.book-container {
-    grid-column: span 12;
-    grid-row: 3;
-    margin-top: 50px;
-    width: 70%;
-    
-    display: grid;
-    grid-template-columns: repeat(12, 1fr);
-    
-    
-    
-}
-
 #totalValue { 
+    margin-top: 50px;
     height: 75px;
     color: #6b6a6b;
     background-color: rgba(255, 255, 255, .8);
     padding: 10px 20px;
- 
+    width: 100%;
     font-size: 3.7em;
     font-family: 'Pacifico', serif;
     text-align: center;
-    line-height: .8;
-    float: left;
-    min-width: 95%;
-    
-    grid-column: span 6;
-    
+    line-height: 1;
+
+    grid-row: 4;
+    grid-column: 2/6;
 } 
 
 #bookMeLink {
-
+    margin-top: 50px;
     font-family: 'Pacifico', arial, sans-serif;  
     text-decoration: none;
     color: #515151;
     background-color: rgba( 255, 255, 255, .5);
     font-size: 3.2em;
     min-width: 95%;
-    padding: 15px;
+    /* padding: 15px; */
     padding-bottom: 2px;
-    
- 
     transition: all .2s ease-out;
-
-   text-align: right;
+    text-align: right;
     border-bottom: 10px solid rgba(255, 133, 82, .8);
-     
-    grid-column: span 6;
     line-height: 1;
     cursor: pointer;
+
+    grid-row: 4;
+    grid-column: 8/12;
 } 
 
 
@@ -437,14 +440,15 @@ form input:checked + label {
 /* SERVICES */
 
 .services-container {
-    grid-column: span 12;
-    grid-row: 4;
     margin: 10vw;
     margin-top: 250px;
     
     background-color: rgba(134, 85, 85, .8);
     color:rgba(255, 255, 255, .9);
     box-shadow: 0px 15px 35px 0px rgba(0,0,0,0.30);
+
+    grid-row: 5;
+    grid-column: span 12;
  }   
 
 
@@ -557,12 +561,12 @@ form input:checked + label {
     border-radius: 10px 10px 0 0;
 }
 
-.where-container, about-container {
+.where-container {
     margin-top: 150px;
     width: 100%;
     
+    grid-row: 6;
     grid-column: span 12;
-    grid-row: 5;
 }
 
 .where-content, 
@@ -663,8 +667,11 @@ form input:checked + label {
 
 
 .about-container {
+    margin-top: 150px;
+    width: 100%;
+    
+    grid-row: 7;
     grid-column: span 12;
-    grid-row: 8;
 }
 
 .about-content {
@@ -724,20 +731,18 @@ span.date {
 
 
 footer {
-    grid-column: span 12;
-    grid-row: 10;
     width: 100%;
-   z-index: 2;
-    
+    z-index: 2;
     background-color: rgba(134, 85, 85, .8);
-}
-
-.footer-container {
-    display: flex;
-    margin: 0 5%;
+	display: flex;
     justify-content: flex-end;
     text-align: right;
+    padding: 0 2%;
+    
+    grid-row: 8;
+    grid-column: span 12;
 }
+
 
 footer h3 {
     text-align: right;
@@ -795,14 +800,13 @@ footer a:hover{
     }
     
     #moveContainer, #routineContainer, #deepContainer {
-        grid-column: span 12;
+        /* grid-column: span 3; */
         padding: 5px;
-        
         
         flex-direction: column;
     }
     
-      .book-container {
+      /* .book-container {
           min-width: 80%;
     }
     
@@ -810,7 +814,7 @@ footer a:hover{
     #bookMeLink {
         font-size: 3em;
        
-    }
+    } */
     
     .services-container {
         
@@ -857,26 +861,25 @@ footer a:hover{
     .includedContainer li {
         font-size: .9em;
     }
-    
+/*     
     #totalValue {
-        grid-column: span 4;
-    }
+        /* grid-column: span 4; */
+    /* }
     
     #bookMeLink {
-
-        grid-column: 6/-1;
-        grid-column: 6/-1;
-    }
+        /* grid-column: 6/-1;
+        grid-column: 6/-1; */
+    /* }  */ 
     
     .services-container h2 {
         font-size: 1.1em;
         margin: 30px;
     }
     
-    .services-container .services-icons {
-        flex-direction: column;
+    /* .services-container .services-icons {
+        
    
-    }
+    } */
     
     .services-container .services-icons p {
         padding-top: 200px;
@@ -937,19 +940,18 @@ footer a:hover{
         font-size: .85em;
     }
     
-    .book-container {
+    /* .book-container {
         margin-top: 50px;
     }
     
     #totalValue {
-        grid-column: span 12;
+        
     }
     
     #bookMeLink {
-        grid-column: span 12;
-        
         margin-top: 20px;
-    }
+    }  */
+
     .services-container{
         background-color: rgba(134, 85, 85, 1);
     }
@@ -962,6 +964,8 @@ footer a:hover{
         padding-top: 150px;
         background-size: 55%;
         margin: 40px auto;
+       
+        flex-direction: column;
     }
     
     .services-container .discounts {
@@ -1016,7 +1020,7 @@ footer a:hover{
     }
         
     .bedSliderContainer, .bathSliderContainer {
-       grid-column: span 12;
+       /* grid-column: span 12; */
        border-radius: 0;
     } 
 
@@ -1024,9 +1028,9 @@ footer a:hover{
         height: 525px;
     }
 
-    .book-container {
+    /* .book-container {
         margin-top: 30px;
-    }
+    } */
         
     .services-container .services-icons p {
             margin: 10px auto;

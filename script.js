@@ -71,17 +71,14 @@ let validZips = [84006,84009,84020,84044,84047,84065,84070,84081,84084,84088,840
      bedOutput.innerHTML = Number(bedSlider.value); 
 
         if (bedOutput.innerHTML == 6){
-            bedOutput.innerHTML = "6+";
-           
+            bedOutput.innerHTML = "6+"; 
         }
- 
-      
-    bathOutput.innerHTML = Number(bathSlider.value);
+   
+     bathOutput.innerHTML = Number(bathSlider.value);
 
- if (bathOutput.innerHTML == 4){
-        bathOutput.innerHTML = "4+";
+ 		if (bathOutput.innerHTML == 4){
+        	bathOutput.innerHTML = "4+";
     }
-
 }
 
 //change bed dollar value based on slider value

@@ -1,318 +1,262 @@
 <!DOCTYPE html>
-
-<html>
-
-  <head> 
+<html>	
+<head> 
 	<title> Clean Karma </title>
-
 	<meta charset="utf-8">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	
-    <link rel="stylesheet" type="text/css" href="style.css">
-    
-    <link href="https://fonts.googleapis.com/css?family=Pacifico%7CQuicksand" rel="stylesheet"> 
-    
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
-      
-    <script> document.createElement( "picture" ); </script>
-      
-  <script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.js" async></script>
-  
-</head>
-	 
-<body>
-    
-    
-<!-- HOME -->
-        
-    <picture>
-        <source srcset="img/home-small.jpeg" media="(max-width: 350px)">
-        <source srcset="img/home-medium.jpeg" media="(max-width: 700px)">
-        <img src="img/home.jpeg" alt="a freshly cleaned room dressed with fresh tulips next to an open window that lets in warm sunlight">
-    </picture>
- 
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Pacifico%7CQuicksand" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet"> 
+
+	<script> document.createElement( "picture" ); </script> 
+	<script src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.js" async></script>
+</head>	
+<body>  
+<!-- bg --> 
+<picture> 
+	<source srcset="img/home-small.jpeg" media="(max-width: 350px)">
+	<source srcset="img/home-medium.jpeg" media="(max-width: 700px)">
+	<img src="img/home.jpeg" alt="a freshly cleaned room dressed with fresh tulips next to an open window that lets in warm sunlight">
+</picture>
+
+<!-- layout -->
 <div class="layout-container">
-<!-- navigation -->
-        
-    <div class="nav-bg"></div>
-      <nav>
-        <ul>
-          <li class="logo"> C <span class=second> K </span> </li>
-        
-          <li> <a href="index.html#services"> Services </a></li>
-            
-          <li> <a href="index.html#where">  Where we serve  </a> </li>
 
-          <li> <a href="index.html#about">  About </a></li>
-        </ul>
-      </nav>
-    
-<!-- Quote form --> 
-    
-<p id="formHeader"> Quote me! </p>    
+<!-- NAV --> 
+<nav>
+	<ul>
+		<li class="logo"> C <span class=second> K </span> </li>
+		<li> <a href="index.html#services"> Services </a></li>
+		<li> <a href="index.html#where">  Where we serve  </a> </li>
+		<li> <a href="index.html#about">  About </a></li>
+	</ul>
+</nav>
+<!-- FORM--> 
+<p id="formHeader"> Quote me! </p> 
+<form id="quoteForm">
+	<div class="commercial tab">
+		<p> for a business </p>
+	</div>
+	<div class="residential tab">
+		<p> for a home </p>
+	</div>
+	<div class="cleaning">
+		<div class="bed slider">
+			<p> How many bedrooms? </p> 
+			<input class="bedSlider" type="range" min="1" max="6" value="3">
+			<p class="bedOutput"></p>
+		</div>
+		<div class="bath slider">
+			<p> How many bathrooms?</p> 
+			<input class="bathSlider" type="range" min="1" max="4">
+			<p class="bathOutput"></p>
+		</div>   
+		<div class="routine input">
+			<input id="routineClean" class="cleanTypes" type="radio" name="clean-type" value="Routine"  />
+			<label for="routineClean">Routine Clean</label>
+		</div>
+		<div class="deep input">					
+			<input id="deepClean" class="cleanTypes" type="radio" name="clean-type" value="Deep" checked/>
+			<label for="deepClean">Deep Clean</label>
+		</div>
+	</div>
+	<div class="windows">
+		<div class="slider">
+			<p> How many floors? </p> 
+			<input class="floorSlider" type="range" min="1" max="3" value="1">
+			<p class="floorOutput"></p>
+		</div>
+		<div class="slider">
+			<p> How many windows? </p> 
+			<input class="windowSlider" type="range" min="1" max="9" value="4">
+			<p class="windowOutput"></p>
+		</div>
 
-    <form id="quoteForm">
- 
-        <div class="bedSliderContainer">
+		<div class="check">
+			<input id="basementCheck" class="" type="checkbox" name="" value=""  />
+			<label for="basementCheck">Do you have a basement?</label>
+		</div>
+	</div>
 
-            <p> How many bedrooms? </p> 
+<!-- clean type  
+<!--
+		<div id="cleanContainer">
+			
+			<div id="routineContainer">
+				<input id="routineClean" class="cleanTypes" type="radio" name="clean-type" value="Routine"  />
+				<label for="routineClean">Routine Clean</label>
+			</div>
 
-            <input class="bedSlider" type="range" min="1" max="6" value="3">
-
-            <p class="bedOutput"></p>
-
-        </div>
-
-        <div class="bathSliderContainer">
-
-            <p> How many bathrooms?</p> 
-
-            <input class="bathSlider" type="range" min="1" max="4">
-
-            <p class="bathOutput"></p>
-
-        </div>   
-
-<!-- clean type  -->
-    <div id="cleanContainer">
-        
-        <div id="routineContainer">
-
-            <input id="routineClean" class="cleanTypes" type="radio" name="clean-type" value="Routine"  />
-
-            <label for="routineClean">Routine Clean</label>
-
-        </div>
-
-        
-        <div id="deepContainer">
-
-            <input id="deepClean" class="cleanTypes" type="radio" name="clean-type" value="Deep" checked/>
-
-            <label for="deepClean">Deep Clean</label>
-
-        </div>
-
-        
-        <div id="moveContainer">
-
-            <input id="moveOutClean" class="cleanTypes" type="radio" name="clean-type" value="Move-out" /> 
-
-            <label for="moveOutClean">Move Clean</label>
-
-        </div>
+			<div id="deepContainer">
+				<input id="deepClean" class="cleanTypes" type="radio" name="clean-type" value="Deep" checked/>
+				<label for="deepClean">Deep Clean</label>
+			</div>
 
 
-    </div> 
+			<div id="moveContainer">
+				<input id="moveOutClean" class="cleanTypes" type="radio" name="clean-type" value="Move-out" /> 
+				<label for="moveOutClean">Move Clean</label>
+			</div>
+		</div> 
+-->
 
-            
-<!-- included -->
-    
-    <div class="includedContainer">
-         <div id="moveIncluded">
-        <p> 
-        For those moving out or moving in to a new place.
-        </p>
-
-        <ul>
-            <li> <b> Upkeep </b> full dusting, empty trashes, clean mirrors  </li>
-
-            <li> <b> Kitchen </b> appliances, microwave, countertops, stove top, sink </li>
-
-            <li> <b> Bathrooms </b> scrub and sanitize sinks, bathtubs / showers, toilets, and floors
-            </li>
-
-            <li> <b> Floors </b> vacuum and mop all floors </li>
-
-            <li> <b> Detailing </b> door frames, baseboards, cobweb removal </li>
-
-            <li> <b> Additional </b> cabinet doors, inside cabinets, pantry, window sills, blinds, and vents </li>
-        </ul>
-        </div>
-        <div id="routineIncluded">
-        <p> 
-        For those who've had a recent professional cleaning.
-        </p>
-
-        <ul>
-            <li><b> Upkeep </b> full dusting, empty trashes, clean mirrors</li>
-            <li><b> Kitchen </b> appliances, microwave, countertops, stove top, sink </li>
-            <li><b> Bathrooms </b> scrub and sanitize sinks, bathtubs / showers, toilets, and floors</li>
-            <li><b> Floors </b> vacuum and mop all floors </li>
-        </ul>
-        </div>
-        <div id="deepIncluded">
-        
-        <p> 
-        For those who need a top-to-bottom detailed clean.
-        </p>
-                
-        <ul>
-            <li><b> Upkeep </b> full dusting, empty trashes, clean mirrors</li>
-            <li><b> Kitchen </b> appliances, microwave, countertops, stove top, sink </li>
-            <li><b> Bathrooms </b> scrub and sanitize sinks, bathtubs / showers, toilets, and floors </li>
-            <li><b> Floors </b> vacuum and mop all floors </li>
-
-            <li><b> Detailing </b> door frames, baseboards, cobweb removal </li>
-        </ul>
-            
-        </div>
-    </div>     
+	<!-- descriptions -->
+<!--
+		<div class="includedContainer">
+			
+				<div id="moveIncluded">
+				<p> For those moving out or moving in to a new place. </p>
+					<ul>
+						<li> <b> Upkeep </b> full dusting, empty trashes, clean mirrors  </li>
+						<li> <b> Kitchen </b> appliances, microwave, countertops, stove top, sink </li>
+						<li> <b> Bathrooms </b> scrub and sanitize sinks, bathtubs / showers, toilets, and floors
+						</li>
+						<li> <b> Floors </b> vacuum and mop all floors </li>
+						<li> <b> Detailing </b> door frames, baseboards, cobweb removal </li>
+						<li> <b> Additional </b> cabinet doors, inside cabinets, pantry, window sills, blinds, and vents </li>
+					</ul>
+			</div>
+			
+			<div id="routineIncluded">
+				<p> For those who've had a recent professional cleaning. </p>
+					<ul>
+						<li><b> Upkeep </b> full dusting, empty trashes, clean mirrors</li>
+						<li><b> Kitchen </b> appliances, microwave, countertops, stove top, sink </li>
+						<li><b> Bathrooms </b> scrub and sanitize sinks, bathtubs / showers, toilets, and floors</li>
+						<li><b> Floors </b> vacuum and mop all floors </li>
+					</ul>
+			</div>
+			
+			<div id="deepIncluded">
+			<p> For those who need a top-to-bottom detailed clean. </p>
+				<ul>
+					<li><b> Upkeep </b> full dusting, empty trashes, clean mirrors</li>
+					<li><b> Kitchen </b> appliances, microwave, countertops, stove top, sink </li>
+					<li><b> Bathrooms </b> scrub and sanitize sinks, bathtubs / showers, toilets, and floors </li>
+					<li><b> Floors </b> vacuum and mop all floors </li>
+					<li><b> Detailing </b> door frames, baseboards, cobweb removal </li>
+				</ul>
+			</div>
+		</div>     
+-->
 </form> 
-    
-     <div class="book-container">
-         
-        <div id="totalValue"> Total </div>
-        <a id="bookMeLink" href="book-me-temp.html"> Book me! </a>
-        
-         
-    </div> 
+	<!-- book me! -->
+	<div id="totalValue"> Total </div>
+	<a id="bookMeLink" href="book-me-temp.html"> Book me! </a>
 
 
-     
+	
 <!-- SERVICES -->
+	<div class="services-container" id="services">
+		<h3 class="title"> </h3>
+		<h2> Vetted teams equipped with tools designed for the deepest cleans. </h2>
 
-    <div class="services-container" id="services">
+		<div class="services-icons">
+			<p> All tools and supplies </p>
+			<p> Seamless communication </p>
+			<p> On-time &amp; Satifaction guarantees</p> <br> <br>
+		</div>
 
-        <h3 class="title"> </h3>
-
-        <h2> Vetted teams equipped with tools designed for the deepest cleans. 
-        </h2>
-
-          <div class="services-icons">
-            <p> All tools and supplies </p>
-            <p> Seamless communication </p>
-            <p> On-time &amp; Satifaction guarantees</p> <br> <br>
-          </div>
-
-        <div class="discounts"> 
-            <p><span> +15% discount </span> for weekly cleans </p> <br>
-            <p><span> +10% discount </span> for bi-weekly cleans</p> <br>
-            <p><span>+5% discount </span> for monthly  cleans</p> <br>
-        </div>
-
-        <h3></h3>
-
-    </div>
-       
+		<div class="discounts"> 
+			<p><span> +15% discount </span> for weekly cleans </p> <br>
+			<p><span> +10% discount </span> for bi-weekly cleans</p> <br>
+			<p><span>+5% discount </span> for monthly  cleans</p> <br>
+		</div>
+	</div>
 
 <!-- WHERE WE SERVE -->
-    
-    <div class="where-container" id="where">
-      <div class="where-bg">
-        <div class="where-content">
-        
-        <picture>
-            <source srcset="img/map-small.png" media="(max-width: 350px)">
-            <source srcset="img/map-medium.png" media="(max-width: 700px)">
-            <img src="img/map.png" alt="map showing the area of salt lake valley our clean teams have reach to">
-        </picture>
-        
-        <h2> Where we serve </h2>
+	<div class="where-container" id="where">
+		<div class="where-bg">
+		<div class="where-content">
+			<picture>
+				<source srcset="img/map-small.png" media="(max-width: 350px)">
+				<source srcset="img/map-medium.png" media="(max-width: 700px)">
+				<img src="img/map.png" alt="map showing the area of salt lake valley our clean teams have reach to">
+			</picture>
+			<h2> Where we serve </h2>
+				<p> We have qualified teams throughout Salt Lake County - from North Salt Lake to Draper. <br> <br>
+					Enter your <span> 5-digit ZIP code </span> to see if we serve your area: <br> 
+					<input type="text" id="zip" name="zip" placeholder="ex: 84096"  pattern="[0-9]{5}" required>
+					<button id="zipSubmit"> Verify </button> <br>
 
-            <p> We have qualified teams throughout Salt Lake County - from North Salt Lake to Draper. 
-            <br> <br>
-            
-            Enter your <span> 5-digit ZIP code </span> to see if we serve your area: 
-            <br> 
+					<span id="alertValidZip"> Looks like we serve your area!  </span>
+					<span id="alertInvalidZip"> We currently don't have teams in your area, but we're expanding!... </span>
+					</p>  
+		</div>  
+		</div>  
+	</div>
 
-            <input type="text" id="zip" name="zip" placeholder="ex: 84096"  pattern="[0-9]{5}" required>
-
-            <button id="zipSubmit"> Verify </button> <br>
-
-
-
-            <span id="alertValidZip"> Looks like we serve your area!  </span>
-
-            <span id="alertInvalidZip"> We currently don't have teams in your area, but we're expanding!... </span>
-        </p>  
-            
-        </div>  
-      </div>  
-    </div>
-    
 
 <!-- ABOUT -->
-
 <div class="about-container" id="about">
-  <div class="about-bg">        
-    <div class="about-content">
-        
-        <picture>
-            <source srcset="img/utah-small.png" media="(max-width: 350px)">
-            <source srcset="img/utah-medium.png" media="(max-width: 700px)">
-            <img src="img/utah.png" alt=" ">
-        </picture>
-
-        <h2> More About us</h2>
-
-
-        
-    
-        <p> 
-          Whether or not you believe in <span> karma </span> as a spiritual force, we believe <span> it is alive and well </span> as a principle of action. 
-          It’s simple - <i>as we do good things, good things are more likely to happen.</i> <br> <br>
-        
-            That's why we make it a priority to take care of our employees and motivate them to do model work, taking care of you in the process. <br> <br>
-
-            When you recruit a Clean Karma team, you can rely on a <span> practiced, efficient, and thorough </span>experience. <br> <br>
-
-            They’re hired and trained by vetted pros, and are <span>background checked and insured </span> for your protection. <br>
-
-            </p>
+	<div class="about-bg">        
+	<div class="about-content">
+		<picture>
+			<source srcset="img/utah-small.png" media="(max-width: 350px)">
+			<source srcset="img/utah-medium.png" media="(max-width: 700px)">
+			<img src="img/utah.png" alt=" ">
+		</picture>
 		
+		<h2> More About us</h2>
+			<p> 
+				Whether or not you believe in <span> karma </span> as a spiritual force, we believe <span> it is alive and well </span> as a principle of action. 
+				It’s simple - <i>as we do good things, good things are more likely to happen.</i> <br> <br>
+
+				That's why we make it a priority to take care of our employees and motivate them to do model work, taking care of you in the process. <br> <br>
+
+				When you recruit a Clean Karma team, you can rely on a <span> practiced, efficient, and thorough </span>experience. <br> <br>
+
+				They’re hired and trained by vetted pros, and are <span>background checked and insured </span> for your protection. <br>
+
+			</p>
+
 <!--
-			<div class="social">
-				<a href="https://www.facebook.com/CleanKarmaUT"> <img src="img/fb-2.png" alt="facebook"> </a>
+		<div class="social">
+			<a href="https://www.facebook.com/CleanKarmaUT"> <img src="img/fb-2.png" alt="facebook"> </a>
 
-				<a href="https://www.instagram.com/cleankarma_ut/"> <img src="img/insta.png" alt="instagram"> </a>
+			<a href="https://www.instagram.com/cleankarma_ut/"> <img src="img/insta.png" alt="instagram"> </a>
 
-				<a href="https://twitter.com/CleanKarma_UT?lang=en"> <img src="img/twit.png" alt="twitter"> </a>
+			<a href="https://twitter.com/CleanKarma_UT?lang=en"> <img src="img/twit.png" alt="twitter"> </a>
 
-			</div>
+		</div>
 
-			<div class="follow">
+		<div class="follow">
 
-				<div class="fb-like" data-href="https://www.instagram.com/cleankarma_ut/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+			<div class="fb-like" data-href="https://www.instagram.com/cleankarma_ut/" data-layout="button" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
 
-				<a href="https://twitter.com/cleankarma_ut?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"> Follow @CleanKarma_UT </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-			</div>
--->
-        </div>
-    </div>   
+			<a href="https://twitter.com/cleankarma_ut?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false"> Follow @CleanKarma_UT </a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+		</div>
+-->			
+	</div>
+</div>   
 </div> 
-    
 
-<!-- FOOTER -->
-    
+
+<!-- FOOTER -->  
 <footer>
-  <div class="footer-container">
-    
 <!--
-    <ul>
-        <li> <h3> Questions? </h3> </li>
-        <li> <a href="Q-A.html"> Q and A </a>
-    </ul>
+	<ul>
+		<li> <h3> Questions? </h3> </li>
+		<li> <a href="Q-A.html"> Q and A </a>
+	</ul>
 -->
 <!--
-      
-     <ul>
-        <li> <h3> Work with us </h3> </li>
-        <li> <a href="jobs.html"> Jobs and careers </a> </li>
- 
-    </ul>
--->
-    
-     <ul class="footer-contact">
-         <li> <h3> Contact us! </h3> </li>
-         <li> Cleaning: (801) 613-2413 </li>
-         <li> Window Washing: (801) 425-9795&nbsp; </li>
 
-    </ul>
-  </div>
+		<ul>
+		<li> <h3> Work with us </h3> </li>
+		<li> <a href="jobs.html"> Jobs and careers </a> </li>
+
+	</ul>
+-->
+		<ul class="contact">
+			<li> <h3> Contact us! </h3> </li>
+			<li> Cleaning: (801) 613-2413 </li>
+			<li> Window Washing: (801) 425-9795&nbsp; </li>
+		</ul>
 </footer>
+
+</div>
 </div>
 
 
